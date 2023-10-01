@@ -30,7 +30,9 @@ scissors = '''
 # Write your code below this line 👇
 
 user__choice = input('''
-======================
+==============================
+=  ROCK PAPER SCISSORS GAME  =
+==============================
 What do you choose?
 Type \"0\" for Rock
 Type \"1\" for Paper
@@ -72,12 +74,12 @@ draw = ['rock_rock', 'paper_paper', 'scissors_scissors']
 probability = [user_win, user_lose, draw]
 
 if result == probability[0][0] or result == probability[0][1] or result == probability[0][2]:
-    print('You WIN!')
+    print('\nYou WIN!')
 
 if result == probability[1][0] or result == probability[1][1] or result == probability[1][2]:
-    print('You Lose.')
+    print('\nYou Lose.')
 
 if result == probability[2][0] or result == probability[2][1] or result == probability[2][2]:
     print('Draw.')
 
-print('======================')
+print('==============================')
