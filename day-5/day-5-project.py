@@ -16,15 +16,12 @@ symbol_list = ['!', '@', '#', '$', '%', '?', '&', '*']
 letter_cap_list = []
 for i in letter_list:
     letter_cap_list.append(i.upper())
-
 letter_list += letter_cap_list
 
 random_letter = (random.sample(letter_list, k=total_letter))
 random_symbol = (random.sample(symbol_list, k=total_symbols))
 random_number = (random.sample(number_list, k=total_numbers))
-random_cap_letter = (random.sample(letter_cap_list, k=total_numbers))
 
 password_list = random_letter + random_symbol + random_number
 random.shuffle(password_list)
-
 print(f"Here is your password: {''.join(password_list)}")
