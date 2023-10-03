@@ -29,11 +29,11 @@ random_cap_letter = (random.sample(letter_cap_list, k=total_numbers))
 
 password_list = random_letter + random_symbol + random_number
 random.shuffle(password_list)
-print(password_list)
+
+print(f"Here is your password: {''.join(password_list)}")
 
 # ' '.join(password_list)
 # print(' '.join(password_list))
 # print(number_list)
 # print(letter_list)
 # print(symbol_list)
-# print("Here is your password: ")
