@@ -21,10 +21,8 @@ random_letter = (random.sample(letter_list, k=total_letter))
 random_symbol = (random.sample(symbol_list, k=total_symbols))
 random_number = (random.sample(number_list, k=total_numbers))
 
-password_list.append(random_letter)
-password_list.append(random_symbol)
-password_list.append(random_number)
-print(str(password_list))
+password_list = random_letter + random_symbol + random_number
+print(password_list)
 # print(number_list)
 # print(letter_list)
 # print(symbol_list)
