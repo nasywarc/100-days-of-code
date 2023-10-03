@@ -6,8 +6,6 @@ total_letter = int(
 total_symbols = int(input("How many symbols would you like?\n"))
 total_numbers = int(input("How many numbers would you like?\n"))
 
-# proccess
-
 number_list = []
 password_list = []
 
@@ -20,7 +18,6 @@ for i in letter_list:
     letter_cap_list.append(i.upper())
 
 letter_list += letter_cap_list
-# print(letter_list)
 
 random_letter = (random.sample(letter_list, k=total_letter))
 random_symbol = (random.sample(symbol_list, k=total_symbols))
@@ -31,9 +28,3 @@ password_list = random_letter + random_symbol + random_number
 random.shuffle(password_list)
 
 print(f"Here is your password: {''.join(password_list)}")
-
-# ' '.join(password_list)
-# print(' '.join(password_list))
-# print(number_list)
-# print(letter_list)
-# print(symbol_list)
