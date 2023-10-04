@@ -13,7 +13,8 @@ for i in student_heights:
     total_height += i
     number_of_student += 1
 
+average_height = round(total_height / number_of_student)
 
-print(f"total height {total_height}")
-print(f"number of students {number_of_student}")
-print(f"average height ")
+print(f"total height = {total_height}")
+print(f"number of students = {number_of_student}")
+print(f"average height = {average_height}")
