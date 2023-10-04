@@ -6,6 +6,12 @@ for n in range(0, len(student_heights)):
 
 # Write your code below this row 👇
 
-print(f"total height ")
+total_height = 0
+
+for i in student_heights:
+    total_height += i
+
+
+print(f"total height {total_height}")
 print(f"number of students ")
 print(f"average height ")
