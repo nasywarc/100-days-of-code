@@ -3,11 +3,6 @@
 #     turn_left()
 #     turn_left()
 
-# def left_is_clear():
-#     turn_left()
-#     turn_left()
-#     right_is_clear()
-
 # def turn_around() :
 #     turn_left()
 #     turn_left()
@@ -28,21 +23,24 @@
 #     else :
 #         jump()
 
+# def left_is_clear() :
+#     turn_around()
+#     right_is_clear()
+#     turn_around()
+
 # def search() :
-#     turn = 0
-#     if right_is_clear() and turn < 4:
-#         turn_right()
-#         while front_is_clear():
-#             move()
-#             turn+=1
-#             if not at_goal() :
-#                 search()
-#     else :
+#     while not at_goal() :
+#         while front_is_clear() or right_is_clear():
+#             if right_is_clear() and not at_goal() :
+#                 turn_right()
+#                 move()
+#             else :
+#                 if not at_goal() :
+#                     move()
+#                 else :
+#                     break
 #         turn_around()
-#         move()
-#         search()
 
 # i = 0
-# found = False
 # while not at_goal() :
 #     search()
