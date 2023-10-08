@@ -3,6 +3,7 @@ import hangman_art  # untuk mengambil var logo dan var stages
 import hangman_words  # untuk mengambil var word_list
 import os  # untuk mengakses file kita, dalam ini clear screen
 
+os.system('cls')
 print(hangman_art.logo)
 user_choice = int(input("1. Animal\n2. Fruit\n3. Snack\nChose your number : "))
 
