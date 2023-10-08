@@ -9,6 +9,19 @@ word_list = ["kucing", "anjing", "semut", "singa", "harimau",
 chosen_word = list(random.choice(word_list))
 # print(f'Pssst, the solution is {chosen_word}.')
 
+print(
+    '''
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/                       
+
+'''
+)
 display = []
 for letter in chosen_word:
     display.append("_")
@@ -30,9 +43,11 @@ while display != chosen_word and life > 0:
                 guess_list.append(guess)
     else:
         life -= 1
+        print("Wrong.")
         print(f"Your life is : {life}")
 
     print(display)
+    print("\n")
 
 if life > 0:
     print("\nYou WIN!")
