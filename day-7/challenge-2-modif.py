@@ -50,7 +50,7 @@ while display != chosen_word and life > 0:
     print(display)
 
 if life > 0:
-    print("\nYou WIN!")
+    print("\nCongrats, You WIN!")
 else:
     print(f"The answer is {chosen_word}")
-    print("\nGame Over.")
+    print("\nYou lose, Game Over.")
