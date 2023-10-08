@@ -20,4 +20,9 @@ def greet_with_name_location(name, location):
 
 # greet()
 # greet_with_name("Jack")
-greet_with_name_location("Jack", "England")
+
+# positional arguments
+# greet_with_name_location("Jack", "England")
+
+# keywords arguments
+greet_with_name_location(location="England", name="Jack")
