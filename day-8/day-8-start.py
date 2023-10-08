@@ -13,5 +13,11 @@ def greet_with_name(name):
     print(f"Hello {name}")
 
 
+def greet_with_name_location(name, location):
+    print(f"Hello {name}")
+    print(f"Do you come from {location}?")
+
+
 # greet()
-greet_with_name("Jack")
+# greet_with_name("Jack")
+greet_with_name_location("Jack", "England")
