@@ -23,10 +23,12 @@ os.system('cls')
 # print(f"Hint : {''.join(chosen_word)}")  # testing code
 print(hangman_art.logo)
 while display != chosen_word and life > 0:
+    print(f"Theme : {theme[user_choice-1]}")
     guess = input("\nGuess a letter : ").lower()
     os.system('cls')  # fungsi untuk clear screen
     print(hangman_art.logo)
     print(f"Theme : {theme[user_choice-1]}\n")
+
     if guess in guess_list:
         print(f"You've already guessed {guess}")
 
@@ -38,12 +40,13 @@ while display != chosen_word and life > 0:
 
     else:
         life -= 1
+        guess_list.append(guess)
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
     print(f"{' '.join(display)}")
     print(hangman_art.stages[life])
 
 if life > 0:
-    print("\nCongrats, You WIN!")
+    print("\nYou WIN!")
 else:
     print(f"The answer is \"{''.join(chosen_word)}\"")
     print("\nYou lose, Game Over.")
