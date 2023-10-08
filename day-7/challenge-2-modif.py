@@ -1,9 +1,13 @@
 # Step 2
 
 import random
-word_list = ["aardvark", "baboon", "camel"]
+# word_list = ["aardvark", "baboon", "camel"]
+word_list = ["kucing", "anjing", "semut", "singa", "harimau",
+             "hamster", "burung", "tikus", "gajah", "jerapah",
+             "angsa", "ikan", "rusa", "macan", "ular"]
+
 chosen_word = list(random.choice(word_list))
-print(f'Pssst, the solution is {chosen_word}.')
+# print(f'Pssst, the solution is {chosen_word}.')
 
 display = []
 for letter in chosen_word:
