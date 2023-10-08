@@ -7,7 +7,9 @@ import os  # untuk mengakses file kita, dalam ini clear screen
 os.system('cls')
 
 print(hangman_art.logo)
-user_choice = int(input("1. Animal\n2. Fruit\n3. Snack\nChose your number : "))
+user_choice = int(input("1. Animal\n2. Fruit\n3. Snack\nChoose game theme : "))
+theme = ['Animal', 'Fruit', 'Snack']
+print(f"Theme : {theme[user_choice-1]}")
 
 chosen_word = list(random.choice(
     hangman_words.my_word_list[user_choice-1][0]))  # memilih tema game
@@ -18,12 +20,13 @@ for letter in chosen_word:
 life = 6
 guess_list = []
 os.system('cls')
-print(f"Hint : {''.join(chosen_word)}")  # testing code
+# print(f"Hint : {''.join(chosen_word)}")  # testing code
 print(hangman_art.logo)
 while display != chosen_word and life > 0:
     guess = input("\nGuess a letter : ").lower()
     os.system('cls')  # fungsi untuk clear screen
     print(hangman_art.logo)
+    print(f"Theme : {theme[user_choice-1]}\n")
     if guess in guess_list:
         print(f"You've already guessed {guess}")
 
