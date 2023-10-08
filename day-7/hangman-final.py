@@ -17,13 +17,17 @@ display = []
 for letter in chosen_word:
     display.append("_")
 
+# print(f"Hint : {''.join(chosen_word)}")  # testing code
 life = 6
 guess_list = []
 os.system('cls')
-# print(f"Hint : {''.join(chosen_word)}")  # testing code
 print(hangman_art.logo)
+i = 0
 while display != chosen_word and life > 0:
-    print(f"Theme : {theme[user_choice-1]}")
+    if i < 1:
+        print(f"Theme : {theme[user_choice-1]}")
+        i += 1
+
     guess = input("\nGuess a letter : ").lower()
     os.system('cls')  # fungsi untuk clear screen
     print(hangman_art.logo)
@@ -47,6 +51,8 @@ while display != chosen_word and life > 0:
 
 if life > 0:
     print("\nYou WIN!")
+    print("===============================================")
 else:
     print(
         f"You lose. The word you couldn't cope with was \"{''.join(chosen_word)}\".")
+    print("===============================================")
