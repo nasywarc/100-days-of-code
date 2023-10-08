@@ -10,10 +10,17 @@ for letter in chosen_word:
     display.append("_")
 
 life = 11
+guess_list = []
 
 while display != chosen_word and life > 0:
     guess = input("Guess a letter : ").lower()
-    if guess in chosen_word:
+    guess_list.append(guess)
+    if guess in guess_list:
+        life -= 1
+        print("You've already guess that letter.")
+        print(f"Your life has decreased to {life}")
+
+    elif guess in chosen_word:
         for position in range(len(chosen_word)):
             if guess == chosen_word[position]:
                 display[position] = (guess)
