@@ -1,15 +1,7 @@
-# Step 2 mix 3 mix 4
-
-import random
-import hangman_art
-import hangman_words
-
-# word_list = ["kucing", "anjing", "semut", "singa", "harimau",
-#              "hamster", "burung", "tikus", "gajah", "jerapah",
-#              "angsa", "ikan", "rusa", "macan", "ular", "siput",
-#              "sapi", "kambing", "domba", "kelelawar", "kuda",
-#              "hiu", "paus", "buaya", "serigala", "marmut", "ulat",
-#              "bebek", "itik", "rubah", "monyet", "babi", "orangutan"]
+import random  # untuk menggunakan random func
+import hangman_art  # untuk mengambil var logo dan var stages
+import hangman_words  # untuk mengambil var word_list
+import os  # untuk mengakses file kita, dalam ini clear screen
 
 print(hangman_art.logo)
 
@@ -25,18 +17,15 @@ guess_list = []
 
 while display != chosen_word and life > 0:
     guess = input("\nGuess a letter : ").lower()
+    os.system('cls')  # fungsi untuk clear screen
     if guess in guess_list:
         print(f"\nYou've already guessed {guess}")
-        # print(f"{' '.join(display)}")
-        # print(hangman_art.stages[life])
 
     elif guess in chosen_word:
         for position in range(len(chosen_word)):
             if guess == chosen_word[position]:
                 display[position] = (guess)
                 guess_list.append(guess)
-        # print(f"{' '.join(display)}")
-        # print(hangman_art.stages[life])
 
     else:
         life -= 1
