@@ -214,7 +214,6 @@ word_list = [
     'zombie',
 ]
 
-
 hewan = ["kucing",
          "anjing",
          "semut",
@@ -241,6 +240,16 @@ hewan = ["kucing",
          "buaya",
          "serigala",
          "marmut"]
+
+makanan = []
+minuman = []
+benda = []
+tempat = []
+kota = []
+negara = []
+artis_luar = []
+band = []
+
 my_word_list = [[hewan],
                 [makanan],
                 [minuman],
