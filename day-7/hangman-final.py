@@ -4,20 +4,23 @@ import hangman_words  # untuk mengambil var word_list
 import os  # untuk mengakses file kita, dalam ini clear screen
 
 print(hangman_art.logo)
+user_choice = int(input("1. Animal\n2. Fruit\n3. Snack\nChose your number : "))
 
-chosen_word = list(random.choice(hangman_words.word_list))
-print(f"Hint : {''.join(chosen_word)}")
-
+chosen_word = list(random.choice(
+    hangman_words.my_word_list[user_choice-1][0]))  # memilih tema
 display = []
 for letter in chosen_word:
     display.append("_")
 
 life = 6
 guess_list = []
-
+os.system('cls')
+print(f"Hint : {''.join(chosen_word)}")  # testing code
+print(hangman_art.logo)
 while display != chosen_word and life > 0:
     guess = input("\nGuess a letter : ").lower()
     os.system('cls')  # fungsi untuk clear screen
+    print(hangman_art.logo)
     if guess in guess_list:
         print(f"\nYou've already guessed {guess}")
 
