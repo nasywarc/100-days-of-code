@@ -53,15 +53,13 @@ while display != chosen_word and life > 0:
                 guess_list.append(guess)
     else:
         life -= 1
-        # print("\nWrong.")
-        # print(f"Your life has decreased to {life}\n")
-        for line in range(len(hangman)):
-            print(hangman[line])
+        print("\nWrong.")
+        print(f"Your life has decreased to {life}\n")
 
     print(display)
 
 if life > 0:
     print("\nCongrats, You WIN!")
 else:
-    print(f"The answer is {chosen_word}")
+    print(f"\nThe answer is {chosen_word}")
     print("\nYou lose, Game Over.")
