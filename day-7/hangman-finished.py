@@ -11,6 +11,8 @@ import hangman_words
 #              "hiu", "paus", "buaya", "serigala", "marmut", "ulat",
 #              "bebek", "itik", "rubah", "monyet", "babi", "orangutan"]
 
+print(hangman_art.logo)
+
 chosen_word = list(random.choice(hangman_words.word_list))
 print(f"Hint : {''.join(chosen_word)}")
 
@@ -24,19 +26,23 @@ guess_list = []
 while display != chosen_word and life > 0:
     guess = input("\nGuess a letter : ").lower()
     if guess in guess_list:
-        print("\nYou've already guess that letter.")
+        print(f"\nYou've already guessed {guess}")
+        # print(f"{' '.join(display)}")
+        # print(hangman_art.stages[life])
 
     elif guess in chosen_word:
         for position in range(len(chosen_word)):
             if guess == chosen_word[position]:
                 display[position] = (guess)
                 guess_list.append(guess)
-        print(f"{' '.join(display)}")
+        # print(f"{' '.join(display)}")
+        # print(hangman_art.stages[life])
 
     else:
         life -= 1
-        print(f"{' '.join(display)}")
-        print(hangman_art.stages[life])
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+    print(f"{' '.join(display)}")
+    print(hangman_art.stages[life])
 
 if life > 0:
     print("\nCongrats, You WIN!")
