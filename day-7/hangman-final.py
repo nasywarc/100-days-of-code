@@ -22,7 +22,7 @@ while display != chosen_word and life > 0:
     os.system('cls')  # fungsi untuk clear screen
     print(hangman_art.logo)
     if guess in guess_list:
-        print(f"\nYou've already guessed {guess}")
+        print(f"You've already guessed {guess}")
 
     elif guess in chosen_word:
         for position in range(len(chosen_word)):
