@@ -48,5 +48,5 @@ while display != chosen_word and life > 0:
 if life > 0:
     print("\nYou WIN!")
 else:
-    print(f"The answer is \"{''.join(chosen_word)}\"")
-    print("\nYou lose, Game Over.")
+    print(
+        f"You lose. The word you couldn't cope with was \"{''.join(chosen_word)}\".")
