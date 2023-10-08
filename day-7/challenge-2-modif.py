@@ -19,7 +19,6 @@ print(
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     __/ |                      
                    |___/                       
-
 '''
 )
 display = []
@@ -30,7 +29,7 @@ life = 11
 guess_list = []
 
 while display != chosen_word and life > 0:
-    guess = input("Guess a letter : ").lower()
+    guess = input("\nGuess a letter : ").lower()
     if guess in guess_list:
         life -= 1
         print("\nYou've already guess that letter.")
@@ -43,11 +42,10 @@ while display != chosen_word and life > 0:
                 guess_list.append(guess)
     else:
         life -= 1
-        print("Wrong.")
-        print(f"Your life is : {life}")
+        print("\nWrong.")
+        print(f"Your life has decreased to {life}\n")
 
     print(display)
-    print("\n")
 
 if life > 0:
     print("\nYou WIN!")
