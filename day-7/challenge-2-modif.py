@@ -4,7 +4,9 @@ import random
 # word_list = ["aardvark", "baboon", "camel"]
 word_list = ["kucing", "anjing", "semut", "singa", "harimau",
              "hamster", "burung", "tikus", "gajah", "jerapah",
-             "angsa", "ikan", "rusa", "macan", "ular"]
+             "angsa", "ikan", "rusa", "macan", "ular", "siput",
+             "sapi", "kambing", "domba", "kelelawar", "kuda",
+             "hiu", "paus", "buaya", "serigala", "marmut"]
 
 chosen_word = list(random.choice(word_list))
 # print(f'Pssst, the solution is {chosen_word}.')
