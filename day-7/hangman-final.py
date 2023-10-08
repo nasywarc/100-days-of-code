@@ -10,7 +10,7 @@ print(hangman_art.logo)
 user_choice = int(input("1. Animal\n2. Fruit\n3. Snack\nChose your number : "))
 
 chosen_word = list(random.choice(
-    hangman_words.my_word_list[user_choice-1][0]))  # memilih tema
+    hangman_words.my_word_list[user_choice-1][0]))  # memilih tema game
 display = []
 for letter in chosen_word:
     display.append("_")
