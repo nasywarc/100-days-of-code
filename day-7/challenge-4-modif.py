@@ -105,7 +105,6 @@ while display != chosen_word and life > 0:
         print(f"{' '.join(display)}")
         print(stages[life])
 
-
 if life > 0:
     print("\nCongrats, You WIN!")
 else:
