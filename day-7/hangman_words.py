@@ -214,49 +214,98 @@ word_list = [
     'zombie',
 ]
 
-hewan = ["kucing",
-         "anjing",
-         "semut",
-         "singa",
-         "harimau",
-         "hamster",
-         "burung",
-         "tikus",
-         "gajah",
-         "jerapah",
-         "angsa",
-         "ikan",
-         "rusa",
-         "macan",
-         "ular",
-         "siput",
-         "sapi",
-         "kambing",
-         "domba",
-         "kelelawar",
-         "kuda",
-         "hiu",
-         "paus",
-         "buaya",
-         "serigala",
-         "marmut"]
+hewan = [
+    "kucing",
+    "anjing",
+    "semut",
+    "singa",
+    "harimau",
+    "hamster",
+    "burung",
+    "tikus",
+    "gajah",
+    "jerapah",
+    "angsa",
+    "ikan",
+    "rusa",
+    "macan",
+    "ular",
+    "siput",
+    "sapi",
+    "kambing",
+    "domba",
+    "kelelawar",
+    "kuda",
+    "hiu",
+    "paus",
+    "buaya",
+    "serigala",
+    "marmut"
+]
 
-makanan = []
-minuman = []
+buah = [
+    "apel",
+    "pepaya",
+    "durian",
+    "mangga",
+    "anggur",
+    "pir",
+    "sirsak",
+    "stroberi",
+    "jambu",
+    "melon",
+    "semangka",
+    "bengkoang",
+    "kelapa",
+    "lemon",
+    "kelengkeng",
+    "jeruk",
+    "nanas",
+    "nangka",
+    "rambutan",
+    "duku",
+    "ceri",
+    "belimbing",
+    "pisang"
+]
+snack = [
+    "chitato",
+    "cheetos",
+    "lays",
+    "tango",
+    "nabati",
+    "twister",
+    "regal",
+    "bengbeng",
+    "pocky",
+    "fitbar",
+    "pringles",
+    "oreo",
+    "soyjoy",
+    "taro",
+    "doritos",
+    "qtela",
+    "potabee",
+    "kusuka",
+    "tictac",
+    "cadbury",
+    "silverqueen",
+    "oishi"
+]
 benda = []
-tempat = []
+mall = []
 kota = []
 negara = []
-artis_luar = []
+orang = []
 band = []
 
 my_word_list = [[hewan],
-                [makanan],
-                [minuman],
+                [buah],
+                [snack],
                 [benda],
-                [tempat],
+                [mall],
                 [kota],
                 [negara],
-                [artis_luar],
+                [orang],
                 [band]
                 ]
