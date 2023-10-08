@@ -6,7 +6,8 @@ word_list = ["kucing", "anjing", "semut", "singa", "harimau",
              "hamster", "burung", "tikus", "gajah", "jerapah",
              "angsa", "ikan", "rusa", "macan", "ular", "siput",
              "sapi", "kambing", "domba", "kelelawar", "kuda",
-             "hiu", "paus", "buaya", "serigala", "marmut"]
+             "hiu", "paus", "buaya", "serigala", "marmut", "ulat",
+             "bebek", "itik", "rubah", "monyet", "babi", "orangutan"]
 
 chosen_word = list(random.choice(word_list))
 # print(f'Pssst, the solution is {chosen_word}.')
@@ -99,13 +100,16 @@ while display != chosen_word and life > 0:
             if guess == chosen_word[position]:
                 display[position] = (guess)
                 guess_list.append(guess)
+                print(f"{' '.join(display)}")
+
     else:
         life -= 1
         # print("\nWrong.")
         # print(f"Your life has decreased to {life}\n")
+        print(f"{' '.join(display)}")
         print(stages[life])
 
-    print(f"{' '.join(display)}")
+    # print(f"{' '.join(display)}")
 
 if life > 0:
     print("\nCongrats, You WIN!")
