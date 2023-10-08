@@ -11,6 +11,15 @@ word_list = ["kucing", "anjing", "semut", "singa", "harimau",
 chosen_word = list(random.choice(word_list))
 # print(f'Pssst, the solution is {chosen_word}.')
 
+hangman = '''
+      _______
+     |/      |
+     |      (_)
+     |      \|/
+     |       |
+     |      / \
+'''
+
 print(
     '''
  _                                             
@@ -44,8 +53,10 @@ while display != chosen_word and life > 0:
                 guess_list.append(guess)
     else:
         life -= 1
-        print("\nWrong.")
-        print(f"Your life has decreased to {life}\n")
+        # print("\nWrong.")
+        # print(f"Your life has decreased to {life}\n")
+        for line in range(len(hangman)):
+            print(hangman[line])
 
     print(display)
 
