@@ -13,6 +13,8 @@ def encrypt(plain_text, shift_amount):
         index_list.append(alphabet.index(letter))
     for index in range(len(index_list)):
         index_list[index] += shift_amount
+        if index_list[index] > 26:
+            index_list[index] -= 26
     for cipher in index_list:
         new_word.append((alphabet[cipher]))
     print("".join(new_word))
@@ -48,3 +50,5 @@ elif direction == 'decode':
     decrypt(text, shift)
 else:
     print("Your input is invalid.")
+
+# print(len(alphabet))
