@@ -14,7 +14,7 @@ def encrypt(plain_text, shift_amount):
             # index_list.append(int(" "))                   # bug
     for index in range(len(index_list)):
         index_list[index] += shift_amount
-        if index_list[index] > 25:
+        while index_list[index] > 25:
             index_list[index] -= 26
     for cipher in index_list:
         new_word.append((alphabet[cipher]))
@@ -26,8 +26,10 @@ def decrypt(cipher_text, shift_amount):
     new_word = []
     for letter in cipher_text:
         index_list.append(alphabet.index(letter))
-    for index in range(len(index_list)):                # bug when decrypting
+    for index in range(len(index_list)):
         index_list[index] -= shift_amount
+        while index_list[index] < 0:
+            index_list[index] += 26
     for cipher in index_list:
         new_word.append((alphabet[cipher]))
     print("".join(new_word))
