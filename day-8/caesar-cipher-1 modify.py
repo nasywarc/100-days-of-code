@@ -8,7 +8,10 @@ def encrypt(plain_text, shift_amount):
     index_list = []
     new_word = []
     for letter in plain_text:
-        index_list.append(alphabet.index(letter))
+        if letter in alphabet:
+            index_list.append(alphabet.index(letter))
+        # else:
+            # index_list.append(int(" "))                   # bug
     for index in range(len(index_list)):
         index_list[index] += shift_amount
         if index_list[index] > 25:
