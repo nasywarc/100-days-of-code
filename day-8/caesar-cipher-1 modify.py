@@ -23,7 +23,7 @@ def decrypt(cipher_text, shift_amount):
     new_word = []
     for letter in cipher_text:
         index_list.append(alphabet.index(letter))
-    for index in range(len(index_list)):
+    for index in range(len(index_list)):                # bug when decrypting
         index_list[index] -= shift_amount
     for cipher in index_list:
         new_word.append((alphabet[cipher]))
