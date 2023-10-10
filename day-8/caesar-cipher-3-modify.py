@@ -17,6 +17,7 @@ def caesar(text, shift, direction):
             while index_list[index] > 25:
                 index_list[index] -= 26
         elif direction == 'decode':
+            index_list[index] -= shift
             while index_list[index] < 0:
                 index_list[index] += 26
         else:
