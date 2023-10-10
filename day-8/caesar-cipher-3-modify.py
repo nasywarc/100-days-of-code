@@ -21,13 +21,15 @@ def caesar(text, shift, direction):
             while index_list[index] < 0:
                 index_list[index] += 26
         else:
-            print("Your input is invalid.")
+            break
     for cipher in index_list:
         new_word.append((alphabet[cipher]))
     if direction == 'encode':
         print("The encoded text is", "".join(new_word))
-    else:
+    elif direction == 'decode':
         print("The decoded text is", "".join(new_word))
+    else:
+        print("\nYour input is invalid.")
 
 
 caesar(text=text, direction=direction, shift=shift)
