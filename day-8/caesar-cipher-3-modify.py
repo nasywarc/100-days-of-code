@@ -23,10 +23,10 @@ def caesar(text, shift, direction):
             print("Your input is invalid.")
     for cipher in index_list:
         new_word.append((alphabet[cipher]))
-        if direction == 'encode':
-            print("The encoded text is ", "".join(new_word))
-        else:
-            print("The decoded text is ", "".join(new_word))
+    if direction == 'encode':
+        print("The encoded text is", "".join(new_word))
+    else:
+        print("The decoded text is", "".join(new_word))
 
 
 caesar(text=text, direction=direction, shift=shift)
