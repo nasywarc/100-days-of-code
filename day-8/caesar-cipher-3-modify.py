@@ -29,4 +29,4 @@ def caesar(text, shift, direction):
             print("The decoded text is ", "".join(new_word))
 
 
-caesar()
+caesar(text=text, direction=direction, shift=shift)
