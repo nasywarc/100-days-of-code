@@ -25,6 +25,7 @@ def caesar(text, shift, direction):
     print(letter_index)
     print(symbol_index)
     print(which_char)
+    print(symbol)
     # for join in range(len(text)):
     #     if direction == 'encode':
     #         for index in text :
