@@ -23,11 +23,11 @@ def caesar(text, shift, direction):
             symbol.append(char)
             # symbol_index.append(text.index(char))
             sym_char.append(text.index(char))
-    # print(letter_index)
-    # print(symbol_index)
-    # print(let_char)
-    # print(sym_char)
-    # print(symbol)
+    print(letter_index)
+    print(symbol_index)
+    print(let_char)
+    print(sym_char)
+    print(symbol)
     # for join in range(len(text)):
     #     if direction == 'encode':
     #         for index in text :
