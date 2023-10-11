@@ -16,7 +16,7 @@ def caesar(text, shift, direction):
             index_list.append(alphabet.index(letter))
         else:
             symbol.append(letter)
-            symbol_index.append(symbol.index(letter))
+            symbol_index.append(text.index(letter))
     print(index_list)
     print(symbol_index)
     # for join in range(len(text)):
