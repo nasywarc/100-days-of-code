@@ -11,22 +11,28 @@ def caesar(text, shift, direction):
     new_word = []
     symbol_index = []
     for letter in text:
-        if letter in alphabet :
+        if letter in alphabet:
             index_list.append(alphabet.index(letter))
-        else :
+        else:
+            symbol_index.append(letter)
     for index in range(len(index_list)):
         if direction == 'encode':
-            index_list[index] += shift
+            if index in index_list:
+                index_list[index] += shift
             while index_list[index] > 25:
                 index_list[index] -= 26
         elif direction == 'decode':
-            index_list[index] -= shift
+            if index in index_list:
+                index_list[index] -= shift
             while index_list[index] < 0:
                 index_list[index] += 26
         else:
             break
     for cipher in index_list:
-        new_word.append((alphabet[cipher]))
+        if cipher in alphabet:
+            new_word.append((alphabet[cipher]))
+        else:
+            new_word.append((symbol_index[cipher]))
     if direction == 'encode':
         print("The encoded text is", "".join(new_word))
     elif direction == 'decode':
