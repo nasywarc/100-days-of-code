@@ -13,3 +13,17 @@ def caesar(start_word, shift, direction):
         if start_word[pos] in alphabet:
             letter_index.append(pos)
             letter.append(alphabet.index(start_word[pos]))
+        else:
+            symbol_index.append(pos)
+            symbol.append(start_word[pos])
+    print(letter)
+    print(letter_index)
+    print(symbol)
+    print(symbol_index)
+
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+caesar(start_word=text, direction=direction, shift=shift)
