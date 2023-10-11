@@ -1,6 +1,6 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
             'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
+symbol = [' ', '.', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '(', ')']
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
@@ -12,20 +12,22 @@ def caesar(text, shift, direction):
     new_word = []
     symbol_index = []
     symbol = []
-    which_char = []
+    let_char = []
+    sym_char = []
     for char in text:
         if char in alphabet:
             letter.append(char)
             letter_index.append(alphabet.index(char))
-            which_char.append(text.index(char))
+            let_char.append(text.index(char))
         else:
             symbol.append(char)
             # symbol_index.append(text.index(char))
-            which_char.append(text.index(char))
-    print(letter_index)
-    print(symbol_index)
-    print(which_char)
-    print(symbol)
+            sym_char.append(text.index(char))
+    # print(letter_index)
+    # print(symbol_index)
+    # print(let_char)
+    # print(sym_char)
+    # print(symbol)
     # for join in range(len(text)):
     #     if direction == 'encode':
     #         for index in text :
