@@ -17,19 +17,21 @@ def caesar(text, shift, direction):
         else:
             symbol.append(letter)
             symbol_index.append(symbol.index(letter))
+    print(index_list)
+    print(symbol_index)
     # for join in range(len(text)):
     #     if direction == 'encode':
     #         for index in text :
 
-        #     if join in index_list:
-        #         index_list[index] += shift
-        #     while index_list[index] > 25:
-        #         index_list[index] -= 26
-        # elif direction == 'decode':
-        #     if index in index_list:
-        #         index_list[index] -= shift
-        #     while index_list[index] < 0:
-        #         index_list[index] += 26
+    #     if join in index_list:
+    #         index_list[index] += shift
+    #     while index_list[index] > 25:
+    #         index_list[index] -= 26
+    # elif direction == 'decode':
+    #     if index in index_list:
+    #         index_list[index] -= shift
+    #     while index_list[index] < 0:
+    #         index_list[index] += 26
     #     else:
     #         break
     # for cipher in index_list:
@@ -45,4 +47,4 @@ def caesar(text, shift, direction):
     #     print("\nYour input is invalid.")
 
 
-# caesar(text=text, direction=direction, shift=shift)
+caesar(text=text, direction=direction, shift=shift)
