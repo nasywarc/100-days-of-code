@@ -9,8 +9,11 @@ shift = int(input("Type the shift number:\n"))
 def caesar(text, shift, direction):
     index_list = []
     new_word = []
+    symbol_index = []
     for letter in text:
-        index_list.append(alphabet.index(letter))
+        if letter in alphabet :
+            index_list.append(alphabet.index(letter))
+        else :
     for index in range(len(index_list)):
         if direction == 'encode':
             index_list[index] += shift
