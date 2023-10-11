@@ -7,34 +7,40 @@ shift = int(input("Type the shift number:\n"))
 
 
 def caesar(text, shift, direction):
-    index_list = []
+    letter_index = []
+    letter = []
     new_word = []
     symbol_index = []
     symbol = []
-    for letter in text:
-        if letter in alphabet:
-            index_list.append(alphabet.index(letter))
+    which_char = []
+    for char in text:
+        if char in alphabet:
+            letter.append(char)
+            letter_index.append(alphabet.index(char))
+            which_char.append(text.index(char))
         else:
-            symbol.append(letter)
-            symbol_index.append(text.index(letter))
-    print(index_list)
+            symbol.append(char)
+            # symbol_index.append(text.index(char))
+            which_char.append(text.index(char))
+    print(letter_index)
     print(symbol_index)
+    print(which_char)
     # for join in range(len(text)):
     #     if direction == 'encode':
     #         for index in text :
 
-    #     if join in index_list:
-    #         index_list[index] += shift
-    #     while index_list[index] > 25:
-    #         index_list[index] -= 26
+    #     if join in letter_index:
+    #         letter_index[index] += shift
+    #     while letter_index[index] > 25:
+    #         letter_index[index] -= 26
     # elif direction == 'decode':
-    #     if index in index_list:
-    #         index_list[index] -= shift
-    #     while index_list[index] < 0:
-    #         index_list[index] += 26
+    #     if index in letter_index:
+    #         letter_index[index] -= shift
+    #     while letter_index[index] < 0:
+    #         letter_index[index] += 26
     #     else:
     #         break
-    # for cipher in index_list:
+    # for cipher in letter_index:
     #     if cipher in alphabet:
     #         new_word.append((alphabet[cipher]))
     #     else:
