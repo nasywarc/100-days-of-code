@@ -10,11 +10,13 @@ def caesar(text, shift, direction):
     index_list = []
     new_word = []
     symbol_index = []
+    symbol = []
     for letter in text:
         if letter in alphabet:
             index_list.append(alphabet.index(letter))
         else:
-            symbol_index.append(letter)
+            symbol.append(letter)
+            symbol_index.append(symbol.index(letter))
     for index in range(len(index_list)):
         if direction == 'encode':
             if index in index_list:
