@@ -1,0 +1,35 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+
+def caesar(text, shift, direction):
+    index_list = []
+    new_word = []
+    for letter in text:
+        index_list.append(alphabet.index(letter))
+    for index in range(len(index_list)):
+        if direction == 'encode':
+            index_list[index] += shift
+            while index_list[index] > 25:
+                index_list[index] -= 26
+        elif direction == 'decode':
+            index_list[index] -= shift
+            while index_list[index] < 0:
+                index_list[index] += 26
+        else:
+            break
+    for cipher in index_list:
+        new_word.append((alphabet[cipher]))
+    if direction == 'encode':
+        print("The encoded text is", "".join(new_word))
+    elif direction == 'decode':
+        print("The decoded text is", "".join(new_word))
+    else:
+        print("\nYour input is invalid.")
+
+
+caesar(text=text, direction=direction, shift=shift)
