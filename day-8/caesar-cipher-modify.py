@@ -21,11 +21,14 @@ def caesar(start_word, shift, direction):
         shift *= -1
     for index in letter:
         new_index = index + shift
+        while new_index > 25:
+            new_index -= 26
+        while new_index < 0:
+            new_index += 26
         new_word.append(alphabet[new_index])
 
     print(letter)
     print(letter_index)
-    print(new_index)
     print(symbol)
     print(symbol_index)
     print(new_word)
