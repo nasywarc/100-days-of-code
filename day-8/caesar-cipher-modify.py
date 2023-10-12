@@ -7,7 +7,8 @@ def caesar(start_word, shift, direction):
     symbol = []
     letter_index = []
     symbol_index = []
-    end_word = []
+    new_index = []
+    new_word = []
 
     for pos in range(len(start_word)):
         if start_word[pos] in alphabet:
@@ -16,8 +17,14 @@ def caesar(start_word, shift, direction):
         else:
             symbol_index.append(pos)
             symbol.append(start_word[pos])
+    if direction == 'decode':
+        shift *= -1
+    for index in letter:
+        new_index.append(index + shift)
+
     print(letter)
     print(letter_index)
+    print(new_index)
     print(symbol)
     print(symbol_index)
 
