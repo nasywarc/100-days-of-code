@@ -9,6 +9,7 @@ def caesar(start_word, shift, direction):
     symbol_index = []
     new_index = ""
     new_word = []
+    end_word = []
 
     for pos in range(len(start_word)):
         if start_word[pos] in alphabet:
@@ -17,8 +18,10 @@ def caesar(start_word, shift, direction):
         else:
             symbol_index.append(pos)
             symbol.append(start_word[pos])
+
     if direction == 'decode':
         shift *= -1
+
     for index in letter:
         new_index = index + shift
         while new_index > 25:
@@ -27,11 +30,19 @@ def caesar(start_word, shift, direction):
             new_index += 26
         new_word.append(alphabet[new_index])
 
+    start = 0
+
+    for join in range(len(start_word)):
+        if join in letter_index:
+            end_word.append(new_word[start])
+            start += 1
+
     print(letter)
     print(letter_index)
     print(symbol)
     print(symbol_index)
     print(new_word)
+    print(end_word)
 
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
