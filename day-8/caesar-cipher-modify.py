@@ -6,7 +6,6 @@ def caesar(start_word, shift, direction):
     letter = []
     symbol = []
     letter_index = []
-    symbol_index = []
     new_index = ""
     new_word = []
     end_word = []
@@ -16,7 +15,6 @@ def caesar(start_word, shift, direction):
             letter_index.append(pos)
             letter.append(alphabet.index(start_word[pos]))
         else:
-            symbol_index.append(pos)
             symbol.append(start_word[pos])
 
     if direction == 'decode':
@@ -42,12 +40,6 @@ def caesar(start_word, shift, direction):
             start_sym += 1
 
     print("".join(end_word))
-    # print(letter)
-    # print(letter_index)
-    # print(symbol)
-    # print(symbol_index)
-    # print(new_word)
-    # print(end_word)
 
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
