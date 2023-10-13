@@ -53,14 +53,14 @@ loop = True
 
 while loop:
     direction = input(
-        "Type \"encode\" to encrypt, type \"decode\" to decrypt:\n")
+        "\nType \"encode\" to encrypt, type \"decode\" to decrypt:\n")
     if direction == 'encode' or direction == 'decode':
-        text = input("Type your message:\n").lower()
-        shift = int(input("Type the shift number:\n"))
+        text = input("\nType your message:\n").lower()
+        shift = int(input("\nType the shift number:\n"))
         caesar(start_word=text, direction=direction, shift=shift)
 
         loop_or_no = input(
-            "\nType \"Yes\" if you want to go again. Otherwise type \"No\"\n")
+            "\nType \"Yes\" if you want to go again. Otherwise type \"No\".\n")
 
         if loop_or_no == 'yes' or loop_or_no == 'Yes':
             loop = True
