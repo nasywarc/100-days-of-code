@@ -5,6 +5,8 @@ import art
 def user_input():
     name = input("What is your name?\t: ")
     bid = int(input("What's your bid?\t: $"))
+    bidders['name'].append(name)
+    bidders['bid'].append(bid)
 
 
 bidders = {'name': [],
@@ -23,4 +25,10 @@ while loop:
         keep_loop = True
         os.system('cls')
     else:
-        keep_loop = False
+        loop = False
+
+os.system('cls')
+max_bid = max(bidders['bid'])
+winner_index = bidders['bid'].index(max_bid)
+print(
+    f"The winner is {bidders['name'][winner_index]} with a bid of ${bidders['bid'][winner_index]}.")
