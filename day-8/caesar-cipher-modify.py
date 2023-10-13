@@ -58,3 +58,5 @@ shift = int(input("Type the shift number:\n"))
 
 if direction == 'encode' or direction == 'decode':
     caesar(start_word=text, direction=direction, shift=shift)
+else:
+    print("Your input is invalid.")
