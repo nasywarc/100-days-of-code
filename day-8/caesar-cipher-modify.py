@@ -65,10 +65,9 @@ os.system('cls')
 print(logo)
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
 if direction == 'encode' or direction == 'decode':
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
     caesar(start_word=text, direction=direction, shift=shift)
 else:
     print("Your input is invalid.")
