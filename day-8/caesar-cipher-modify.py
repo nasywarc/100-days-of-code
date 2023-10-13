@@ -60,7 +60,7 @@ while loop:
         caesar(start_word=text, direction=direction, shift=shift)
 
         loop_or_no = input(
-            "Type \"Yes\" if you want to go again. Otherwise type \"No\"\n")
+            "\nType \"Yes\" if you want to go again. Otherwise type \"No\"\n")
 
         if loop_or_no == 'yes' or loop_or_no == 'Yes':
             loop = True
