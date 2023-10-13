@@ -72,4 +72,4 @@ while loop:
             print("Your input is invalid.")
 
     else:
-        print("Your input is invalid.")
+        print("Your input is invalid, please type the right choice.")
