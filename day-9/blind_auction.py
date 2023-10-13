@@ -24,11 +24,13 @@ while loop:
     if keep_loop == 'yes' or keep_loop == 'Yes':
         keep_loop = True
         os.system('cls')
+        print(art.logo)
     else:
         loop = False
 
 os.system('cls')
+print(art.logo)
 max_bid = max(bidders['bid'])
 winner_index = bidders['bid'].index(max_bid)
 print(
-    f"The winner is {bidders['name'][winner_index]} with a bid of ${bidders['bid'][winner_index]}.")
+    f"The winner is {bidders['name'][winner_index]} with a bid of ${bidders['bid'][winner_index]}.\n\n")
