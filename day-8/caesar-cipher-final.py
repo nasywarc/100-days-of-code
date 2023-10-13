@@ -1,8 +1,10 @@
 import os
 from art import logo
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
+            'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's',
+            't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 
 def caesar(start_word, shift, direction):
@@ -55,6 +57,7 @@ loop = True
 while loop:
     direction = input(
         "\nType \"encode\" to encrypt, type \"decode\" to decrypt:\n")
+
     if direction == 'encode' or direction == 'decode':
         text = input("\nType your message:\n").lower()
         shift = int(input("\nType the shift number:\n"))
