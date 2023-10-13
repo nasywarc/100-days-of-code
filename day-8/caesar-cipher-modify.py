@@ -13,6 +13,7 @@ def caesar(start_word, shift, direction):
     new_word = []
     end_word = []
     final_result = ""
+
     for pos in range(len(start_word)):
         if start_word[pos] in alphabet:
             letter_index.append(pos)
