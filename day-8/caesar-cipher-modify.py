@@ -49,7 +49,7 @@ def caesar(start_word, shift, direction):
         print(f"Here's the {direction}d result : {final_result}")
 
         loop_or_no = input(
-            "Type \"Yes\" if you want to go again. Otherwise type \"No\"")
+            "Type \"Yes\" if you want to go again. Otherwise type \"No\"\n")
 
         if loop_or_no == 'yes' or loop_or_no == 'Yes':
             loop = True
@@ -64,7 +64,7 @@ def caesar(start_word, shift, direction):
 os.system('cls')
 print(logo)
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+direction = input("Type \"encode\" to encrypt, type \"decode\" to decrypt:\n")
 if direction == 'encode' or direction == 'decode':
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
