@@ -48,6 +48,18 @@ def caesar(start_word, shift, direction):
         final_result = "".join(end_word)
         print(f"Here's the {direction}d result : {final_result}")
 
+        loop_or_no = input(
+            "Type \"Yes\" if you want to go again. Otherwise type \"No\"")
+
+        if loop_or_no == 'yes' or loop_or_no == 'Yes':
+            loop = True
+        elif loop_or_no == 'no' or loop_or_no == 'No':
+            loop = False
+            print("Goodbye!")
+        else:
+            loop = False
+            print("Your input is invalid.")
+
 
 os.system('cls')
 print(logo)
