@@ -53,4 +53,4 @@ else:
         number[0] = result
         i += 1
         if keep_loop == 'n':
-            loop = False
+            number[0] = int(input("\nWhat's the first number?\n"))
