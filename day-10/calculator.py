@@ -25,18 +25,29 @@ def div(first, sec):
 os.system('cls')
 print(art.logo)
 
-first_num = int(input("What's the first number?\n"))
+number = []
+loop = True
+i = 1
+number[0] = int(input("What's the first number?\n"))
 operation = input("Pick an operation. (\" + \", \" - \", \" * \", \" / \")\n")
+
 if operation != "+" and operation != "-" and operation != "*" and operation != "/":
     print("Your input is invalid.")
 else:
-    second_num = int(input("What's the next number?\n"))
-    if operation == "+":
-        result = add(first_num, second_num)
-    elif operation == "-":
-        result = sub(first_num, second_num)
-    elif operation == "*":
-        result = mul(first_num, second_num)
-    else:
-        result = div(first_num, second_num)
-    print(f"\n{first_num} {operation} {second_num} = {result}")
+    while loop:
+        number[i] = int(input("What's the next number?\n"))
+        if operation == "+":
+            result = add(number[i-1], number[i])
+        elif operation == "-":
+            result = sub(number[i-1], number[i])
+        elif operation == "*":
+            result = mul(number[i-1], number[i])
+        else:
+            result = div(number[i-1], number[i])
+        print(f"\n{number[i-1]} {operation} {number[i]} = {result}")
+        keep_loop = print(
+            f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation.\nInput : ")
+        i += 1
+        number[i-1] = result
+        if keep_loop == 'n':
+            loop = False
