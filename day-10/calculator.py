@@ -32,14 +32,11 @@ if operation != "+" and operation != "-" and operation != "*" and operation != "
 else:
     second_num = int(input("What's the next number?\n"))
     if operation == "+":
-        print(
-            f"\n{first_num} {operation} {second_num} = {add(first_num, second_num)}")
+        result = add(first_num, second_num)
     elif operation == "-":
-        print(
-            f"\n{first_num} {operation} {second_num} = {sub(first_num, second_num)}")
+        result = sub(first_num, second_num)
     elif operation == "*":
-        print(
-            f"\n{first_num} {operation} {second_num} = {mul(first_num, second_num)}")
-    elif operation == "/":
-        print(
-            f"\n{first_num} {operation} {second_num} = {div(first_num, second_num)}")
+        result = mul(first_num, second_num)
+    else:
+        result = div(first_num, second_num)
+    print(f"\n{first_num} {operation} {second_num} = {result}")
