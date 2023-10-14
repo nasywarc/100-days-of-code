@@ -27,7 +27,7 @@ print(art.logo)
 
 first_num = int(input("What's the first number?\n"))
 operation = input("Pick an operation. (\" + \", \" - \", \" * \", \" / \")\n")
-if operation != "+" or operation != "-" or operation != "*" or operation != "/":
+if operation != "+" and operation != "-" and operation != "*" and operation != "/":
     print("Your input is invalid.")
 else:
     second_num = int(input("What's the next number?\n"))
