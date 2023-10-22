@@ -6,12 +6,29 @@ import random
 def pick_a_card():
     shuffle = random.randint(1, 12)
     card = cards[shuffle]
-    return card
+    shuffle = random.randint(1, 12)
+    card2 = cards[shuffle]
+    return card, card2
 
 
 def play_game():
-    user_first_card = pick_a_card()
+    user_first_card = computer_first_card = []
+    user_first_card.append(pick_a_card())
     print(user_first_card)
+    computer_first_card.append(pick_a_card())
+    print(computer_first_card)
+    return user_first_card, computer_first_card
+
+
+def take_or_no(first_num, sec_num):
+    while first_num + sec_num < 21:
+        computer_choice = random.randint(0, 1)
+        if computer_choice == 1:
+            play_game()[1].append(pick_a_card())
+        choice = input(
+            'Type \'y\' to get another card or \'n\' to pass.\nInput -> ').lower()
+        if choice == 'y':
+            play_game()[0].append(pick_a_card())
 
 
 os.system('cls')
