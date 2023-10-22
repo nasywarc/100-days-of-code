@@ -4,60 +4,58 @@ import random
 
 
 def pick_a_card():
-    shuffle = random.randint(1, 12)
+    shuffle = random.randint(0, 12)
     card = cards[shuffle]
     return card
 
 
 def play_game():
-    play = True
-    user_first_card = computer_first_card = []
-    user_first_card.append(pick_a_card())
-    user_first_card.append(pick_a_card())
-    user_score = computer_score = 0
+    game = True
 
-    while play:
+    while game:
+        play = True
+        user_first_card = computer_first_card = []
 
-        for score in user_first_card:
-            user_score += score
-
-        print(f'Your cards : {user_first_card}, current score : {user_score}')
+        user_first_card.append(pick_a_card())
+        user_first_card.append(pick_a_card())
 
         computer_first_card.append(pick_a_card())
         computer_first_card.append(pick_a_card())
 
-        print(f'Computer first card : {computer_first_card[0]}')
-        for score in computer_first_card:
-            computer_score += score
+        user_score = computer_score = 0
 
-        if user_score < 21:
-            user_choice = input(
-                'Type \'y\' to get another card or \'n\' to pass.\nInput -> ').lower()
-            if user_choice == 'y':
-                user_first_card.append(pick_a_card())
+        while play:
 
-        if computer_score < 21:
-            computer_choice = random.randint(0, 1)
-            if computer_choice == 1:
-                computer_first_card.append(pick_a_card())
+            for score in user_first_card:
+                user_score += score
 
-        if user_choice >= 21:
-            play = False
-            print('You lose.')
-        elif computer_choice >= 21:
-            play = False
-            print('You win.')
+            for score in computer_first_card:
+                computer_score += score
 
+            print(
+                f'Your cards : {user_first_card}, current score : {user_score}')
+            print(f'Computer first card : {computer_first_card[0]}')
 
-# def take_or_no(first_num, sec_num):
-#     while first_num + sec_num < 21:
-#         computer_choice = random.randint(0, 1)
-#         if computer_choice == 1:
-#             play_game()[1].append(pick_a_card())
-#         choice = input(
-#             'Type \'y\' to get another card or \'n\' to pass.\nInput -> ').lower()
-#         if choice == 'y':
-#             play_game()[0].append(pick_a_card())
+            if user_score < 21:
+                user_choice = input(
+                    'Type \'y\' to get another card or \'n\' to pass.\nInput -> ').lower()
+                if user_choice == 'y':
+                    user_first_card.append(pick_a_card())
+
+            if computer_score < 21:
+                computer_choice = random.randint(0, 1)
+                if computer_choice == 1:
+                    computer_first_card.append(pick_a_card())
+
+            if user_score > 21:
+                play = False
+                game = False
+                print('You lose.\n')
+            elif computer_score > 21:
+                play = False
+                game = False
+                print('You win.\n')
+
 
 os.system('cls')
 loop = True
