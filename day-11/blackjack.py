@@ -60,7 +60,7 @@ def play_game():
         if user_score > 21 or computer_score == 21:
             play = False
             print(
-                f'Your final hand : {user_first_card}, current score : {user_score}')
+                f'\nYour final hand : {user_first_card}, current score : {user_score}')
             print(
                 f'Computer\'s final hand : {computer_first_card}, current score : {computer_score}\n')
             print('You lose. 😭\n')
