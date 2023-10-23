@@ -16,11 +16,8 @@ def play_game():
 
     user_first_card.append(pick_a_card())
     user_first_card.append(pick_a_card())
-    print(f'ini user{user_first_card}')
     computer_first_card.append(pick_a_card())
     computer_first_card.append(pick_a_card())
-    print(f'ini user lagi{user_first_card}')
-    print(f'ini computer{computer_first_card}\n\n')
     user_score = computer_score = 0
 
     for score in user_first_card:
@@ -54,13 +51,18 @@ def play_game():
 
         if user_score > 21:
             play = False
-            print('You lose.\n')
+            print(
+                f'\nYour final hand : {user_first_card}, current score : {user_score}')
+            print(
+                f'Computer\'s final hand : {computer_first_card}, current score : {computer_score}\n')
+            print('You lose. 😭\n')
         elif computer_score > 21:
             play = False
-            print('You win.\n')
-
-    print(f'Your cards : {user_first_card}, current score : {user_score}')
-    print(f'Computer first card : {computer_first_card}\n')
+            print(
+                f'\nYour final hand : {user_first_card}, current score : {user_score}')
+            print(
+                f'Computer\'s final hand : {computer_first_card}, current score : {computer_score}\n')
+            print('You win. 😎\n')
 
 
 os.system('cls')
