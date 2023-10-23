@@ -33,7 +33,7 @@ def play_game():
 
         if user_score < 21:
             user_choice = input(
-                'Type \'y\' to get another card or \'n\' to pass.\nInput -> ').lower()
+                '\nType \'y\' to get another card or \'n\' to pass.\nInput -> ').lower()
             if user_choice == 'y':
                 user_first_card.append(pick_a_card())
                 user_score += user_first_card[len(user_first_card)-1]
@@ -55,12 +55,12 @@ def play_game():
                     computer_first_card)-1]
 
         print(f'Your cards : {user_first_card}, current score : {user_score}')
-        print(f'Computer first card : {computer_first_card[0]}\n')
+        print(f'Computer first card : {computer_first_card[0]}')
 
         if user_score > 21 or computer_score == 21:
             play = False
             print(
-                f'\nYour final hand : {user_first_card}, current score : {user_score}')
+                f'Your final hand : {user_first_card}, current score : {user_score}')
             print(
                 f'Computer\'s final hand : {computer_first_card}, current score : {computer_score}\n')
             print('You lose. 😭\n')
