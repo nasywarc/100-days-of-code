@@ -29,23 +29,27 @@ def play_game():
     for score in computer_first_card:
         computer_score += score
 
-    while play:
+    print(f'Your cards : {user_first_card}, current score : {user_score}')
+    print(f'Computer first card : {computer_first_card[0]}')
 
-        print(
-            f'Your cards : {user_first_card}, current score : {user_score}')
-        print(f'Computer first card : {computer_first_card[0]}')
+    while play:
 
         if user_score < 21:
             user_choice = input(
                 'Type \'y\' to get another card or \'n\' to pass.\nInput -> ').lower()
             if user_choice == 'y':
                 user_first_card.append(pick_a_card())
-                user_score += user_score[len(user_score)-1]
+                user_score += user_first_card[len(user_first_card)-1]
 
         if computer_score < 21:
             computer_choice = random.randint(0, 1)
             if computer_choice == 1:
                 computer_first_card.append(pick_a_card())
+                computer_score += computer_first_card[len(
+                    computer_first_card)-1]
+
+        print(f'Your cards : {user_first_card}, current score : {user_score}')
+        print(f'Computer first card : {computer_first_card[0]}')
 
         if user_score > 21:
             play = False
@@ -53,6 +57,9 @@ def play_game():
         elif computer_score > 21:
             play = False
             print('You win.\n')
+
+    print(f'Your cards : {user_first_card}, current score : {user_score}')
+    print(f'Computer first card : {computer_first_card}\n')
 
 
 os.system('cls')
