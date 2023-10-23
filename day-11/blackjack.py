@@ -49,23 +49,22 @@ def play_game():
 
         if computer_score < 21:
             computer_choice = random.randint(0, 1)
-            print("computer choice", computer_choice)
             if computer_choice == 1:
                 computer_first_card.append(pick_a_card())
                 computer_score += computer_first_card[len(
                     computer_first_card)-1]
 
         print(f'Your cards : {user_first_card}, current score : {user_score}')
-        print(f'Computer first card : {computer_first_card[0]}')
+        print(f'Computer first card : {computer_first_card[0]}\n')
 
-        if user_score > 21:
+        if user_score > 21 or computer_score == 21:
             play = False
             print(
                 f'\nYour final hand : {user_first_card}, current score : {user_score}')
             print(
                 f'Computer\'s final hand : {computer_first_card}, current score : {computer_score}\n')
             print('You lose. 😭\n')
-        elif computer_score > 21:
+        elif computer_score > 21 or user_score == 21:
             play = False
             print(
                 f'\nYour final hand : {user_first_card}, current score : {user_score}')
