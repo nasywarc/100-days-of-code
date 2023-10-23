@@ -43,6 +43,7 @@ def play_game():
 
         if computer_score < 21:
             computer_choice = random.randint(0, 1)
+            print("computer choice", computer_choice)
             if computer_choice == 1:
                 computer_first_card.append(pick_a_card())
                 computer_score += computer_first_card[len(
