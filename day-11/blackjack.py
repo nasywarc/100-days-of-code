@@ -38,6 +38,15 @@ def play_game():
                 user_first_card.append(pick_a_card())
                 user_score += user_first_card[len(user_first_card)-1]
 
+        if user_score > 21:
+            play = False
+            print(
+                f'\nYour final hand : {user_first_card}, current score : {user_score}')
+            print(
+                f'Computer\'s final hand : {computer_first_card}, current score : {computer_score}\n')
+            print('You lose. BUST. 😭\n')
+            break
+
         if computer_score < 21:
             computer_choice = random.randint(0, 1)
             print("computer choice", computer_choice)
