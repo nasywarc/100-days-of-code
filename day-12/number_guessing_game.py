@@ -4,6 +4,7 @@ import os
 
 attempts = 10
 random_int = random.randint(1, 100)
+play = True
 
 
 def hard():
@@ -19,19 +20,21 @@ level_choice = input(
 
 if level_choice == 'hard':
     attempts = hard()
+elif level_choice != 'easy':
+    print('Your input is invalid.')
+    exit()
 
-play = True
 while play:
     print(f'\nYou have {attempts} attempts remaining to guess the number.')
     guess = int(input('Make a guess : '))
     if random_int == guess:
-        print('You win.')
+        print(f'\nYou got it! The answer was {random_int}.')
         play = False
     elif random_int > guess:
         print('Too low.\nGuess again.')
         attempts -= 1
     elif attempts == 0:
-        print('You lose.')
+        print('\nYou\'ve run out of guesses, you lose.')
         play = False
     else:
         print('Too high.\nGuess again.')
