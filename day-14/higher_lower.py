@@ -53,6 +53,8 @@ while play:
         if user_answer == 'a':
             first_artist = second_artist
             second_artist = pick_the_artist()
+            if first_artist == second_artist:
+                second_artist = pick_the_artist()
             right()
         else:
             wrong()
@@ -60,6 +62,8 @@ while play:
         if user_answer == 'b':
             first_artist = second_artist
             second_artist = pick_the_artist()
+            if first_artist == second_artist:
+                second_artist = pick_the_artist()
             right()
         else:
             wrong()
