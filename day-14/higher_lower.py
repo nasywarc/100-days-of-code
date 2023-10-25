@@ -5,22 +5,24 @@ import random
 
 
 def pick_the_artist():
-    # index_pick = random.randint(0, 24)
     index_pick = random.randint(0, 24)
-    artist_choice = data[index_pick]['artist']
-    print(artist_choice)
+    # artist_choice = data[index_pick]
+    # return artist_choice
+    return index_pick
 
 
 os.system('cls')
 print(art.logo)
 
-print('Compare A: Dwayne Johnson, a Actor and professional wrestler, from United States.')
+first_artist = pick_the_artist()
+second_artist = pick_the_artist()
+print(
+    f'Compare A: {data[first_artist]["artist"]}, a {data[first_artist]["occupation"]}, from {data[first_artist]["born"]}.')
 print(art.vs)
-print('Against B: FC Barcelona, a Football club, from Spain.')
+print(
+    f'Against B: {data[second_artist]["artist"]}, a {data[second_artist]["occupation"]}, from {data[second_artist]["born"]}.')
 
-print(len(data))
-pick_the_artist()
-# input('\nWho has more followers? Type \'A\' or \'B\'.\nInput -> ')
+input('\nWho has more followers? Type \'A\' or \'B\'.\nInput -> ')
 
 # if right => You're right! Current score: {score}.
 # if wrong => Sorry, that's wrong. Final score: {score}.
