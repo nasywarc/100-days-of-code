@@ -1,152 +1,302 @@
 data = [
     {
-        'artist': 'Zayn Malik',
-        'followers': 51503966,
-        'occupation': 'Musician, One Direction Former Member',
-        'born': 'Bradford, England',
+        'name': 'Instagram',
+        'follower_count': 346,
+        'description': 'Social media platform',
+        'country': 'United States'
     },
     {
-        'artist': 'Harry Styles',
-        'followers': 1,
-        'occupation': 'Musician, One Direction Former Member',
-        'born': 'Redditch, UK',
+        'name': 'Cristiano Ronaldo',
+        'follower_count': 215,
+        'description': 'Footballer',
+        'country': 'Portugal'
     },
     {
-        'artist': 'Louis Tomlinson',
-        'followers': 2,
-        'occupation': 'Musician, One Direction Former Member',
-        'born': 'Doncaster, UK',
+        'name': 'Ariana Grande',
+        'follower_count': 183,
+        'description': 'Musician and actress',
+        'country': 'United States'
     },
     {
-        'artist': 'Liam Payne',
-        'followers': 3,
-        'occupation': 'Musician, One Direction Former Member',
-        'born': 'Wolverhampton, UK',
+        'name': 'Dwayne Johnson',
+        'follower_count': 181,
+        'description': 'Actor and professional wrestler',
+        'country': 'United States'
     },
     {
-        'artist': 'Niall Horan',
-        'followers': 4,
-        'occupation': 'Musician, One Direction Former Member',
-        'born': 'Mullingar, Ireland',
+        'name': 'Selena Gomez',
+        'follower_count': 174,
+        'description': 'Musician and actress',
+        'country': 'United States'
     },
     {
-        'artist': 'Selena Gomez',
-        'followers': 5,
-        'occupation': 'Musician',
-        'born': 'Texas, UK',
+        'name': 'Kylie Jenner',
+        'follower_count': 172,
+        'description': 'Reality TV personality and businesswoman and Self-Made Billionaire',
+        'country': 'United States'
     },
     {
-        'artist': 'Taylor Swift',
-        'followers': 6,
-        'occupation': 'Musician',
-        'born': 'Pennsylvania, US',
+        'name': 'Kim Kardashian',
+        'follower_count': 167,
+        'description': 'Reality TV personality and businesswoman',
+        'country': 'United States'
     },
     {
-        'artist': 'Gigi Hadid',
-        'followers': 7,
-        'occupation': 'Model',
-        'born': 'California, US',
+        'name': 'Lionel Messi',
+        'follower_count': 149,
+        'description': 'Footballer',
+        'country': 'Argentina'
     },
     {
-        'artist': 'Kendall Jenner',
-        'followers': 8,
-        'occupation': 'Model',
-        'born': 'California, US',
+        'name': 'Beyoncé',
+        'follower_count': 145,
+        'description': 'Musician',
+        'country': 'United States'
     },
     {
-        'artist': 'Kylie Jenner',
-        'followers': 9,
-        'occupation': 'Model',
-        'born': 'California, US',
+        'name': 'Neymar',
+        'follower_count': 138,
+        'description': 'Footballer',
+        'country': 'Brasil'
     },
     {
-        'artist': 'Chris Brown',
-        'followers': 10,
-        'occupation': 'Musician',
-        'born': 'Virginia, US',
+        'name': 'National Geographic',
+        'follower_count': 135,
+        'description': 'Magazine',
+        'country': 'United States'
     },
     {
-        'artist': 'Chris Pratt',
-        'followers': 11,
-        'occupation': 'Actor',
-        'born': 'Minnesota, US',
+        'name': 'Justin Bieber',
+        'follower_count': 133,
+        'description': 'Musician',
+        'country': 'Canada'
     },
     {
-        'artist': 'Zac Efron',
-        'followers': 12,
-        'occupation': 'Actor',
-        'born': 'California, US',
+        'name': 'Taylor Swift',
+        'follower_count': 131,
+        'description': 'Musician',
+        'country': 'United States'
     },
     {
-        'artist': 'Ed Sheeran',
-        'followers': 13,
-        'occupation': 'Musician',
-        'born': 'Halifax, UK',
+        'name': 'Kendall Jenner',
+        'follower_count': 127,
+        'description': 'Reality TV personality and Model',
+        'country': 'United States'
     },
     {
-        'artist': 'instagram',
-        'followers': 14,
-        'occupation': 'verified account',
-        'born': 'unknown',
+        'name': 'Jennifer Lopez',
+        'follower_count': 119,
+        'description': 'Musician and actress',
+        'country': 'United States'
     },
     {
-        'artist': 'Perrie Edwards',
-        'followers': 15,
-        'occupation': 'Musician',
-        'born': 'South Shields, UK',
+        'name': 'Nicki Minaj',
+        'follower_count': 113,
+        'description': 'Musician',
+        'country': 'Trinidad and Tobago'
     },
     {
-        'artist': 'NASA',
-        'followers': 16,
-        'occupation': 'verified account',
-        'born': 'unknown',
+        'name': 'Nike',
+        'follower_count': 109,
+        'description': 'Sportswear multinational',
+        'country': 'United States'
     },
     {
-        'artist': 'folkative',
-        'followers': 17,
-        'occupation': 'verified account',
-        'born': 'unknown',
+        'name': 'Khloé Kardashian',
+        'follower_count': 108,
+        'description': 'Reality TV personality and businesswoman',
+        'country': 'United States'
     },
     {
-        'artist': 'Marshmello',
-        'followers': 18,
-        'occupation': 'Musician',
-        'born': 'Pennsylvania, US',
+        'name': 'Miley Cyrus',
+        'follower_count': 107,
+        'description': 'Musician and actress',
+        'country': 'United States'
     },
     {
-        'artist': 'Camila Cabello',
-        'followers': 19,
-        'occupation': 'Musician',
-        'born': 'Cojimar, Cuba',
+        'name': 'Katy Perry',
+        'follower_count': 94,
+        'description': 'Musician',
+        'country': 'United States'
     },
     {
-        'artist': 'Shawn Mendes',
-        'followers': 20,
-        'occupation': 'Musician',
-        'born': 'Pickering, Canada',
+        'name': 'Kourtney Kardashian',
+        'follower_count': 90,
+        'description': 'Reality TV personality',
+        'country': 'United States'
     },
     {
-        'artist': 'Alan Walker',
-        'followers': 21,
-        'occupation': 'Musician',
-        'born': 'Northampton, UK',
+        'name': 'Kevin Hart',
+        'follower_count': 89,
+        'description': 'Comedian and actor',
+        'country': 'United States'
     },
     {
-        'artist': 'Imagine Dragons',
-        'followers': 22,
-        'occupation': 'Musician',
-        'born': 'Las Vegas, Nevada',
+        'name': 'Ellen DeGeneres',
+        'follower_count': 87,
+        'description': 'Comedian',
+        'country': 'United States'
     },
     {
-        'artist': 'Lady Gaga',
-        'followers': 23,
-        'occupation': 'Musician, Actor',
-        'born': 'New York, US',
+        'name': 'Real Madrid CF',
+        'follower_count': 86,
+        'description': 'Football club',
+        'country': 'Spain'
     },
     {
-        'artist': 'Ariana Grande',
-        'followers': 24,
-        'occupation': 'Musician',
-        'born': 'Florida, US',
+        'name': 'FC Barcelona',
+        'follower_count': 85,
+        'description': 'Football club',
+        'country': 'Spain'
+    },
+    {
+        'name': 'Rihanna',
+        'follower_count': 81,
+        'description': 'Musician and businesswoman',
+        'country': 'Barbados'
+    },
+    {
+        'name': 'Demi Lovato',
+        'follower_count': 80,
+        'description': 'Musician and actress',
+        'country': 'United States'
+    },
+    {
+        'name': "Victoria's Secret",
+        'follower_count': 69,
+        'description': 'Lingerie brand',
+        'country': 'United States'
+    },
+    {
+        'name': 'Zendaya',
+        'follower_count': 68,
+        'description': 'Actress and musician',
+        'country': 'United States'
+    },
+    {
+        'name': 'Shakira',
+        'follower_count': 66,
+        'description': 'Musician',
+        'country': 'Colombia'
+    },
+    {
+        'name': 'Drake',
+        'follower_count': 65,
+        'description': 'Musician',
+        'country': 'Canada'
+    },
+    {
+        'name': 'Chris Brown',
+        'follower_count': 64,
+        'description': 'Musician',
+        'country': 'United States'
+    },
+    {
+        'name': 'LeBron James',
+        'follower_count': 63,
+        'description': 'Basketball player',
+        'country': 'United States'
+    },
+    {
+        'name': 'Vin Diesel',
+        'follower_count': 62,
+        'description': 'Actor',
+        'country': 'United States'
+    },
+    {
+        'name': 'Cardi B',
+        'follower_count': 67,
+        'description': 'Musician',
+        'country': 'United States'
+    },
+    {
+        'name': 'David Beckham',
+        'follower_count': 82,
+        'description': 'Footballer',
+        'country': 'United Kingdom'
+    },
+    {
+        'name': 'Billie Eilish',
+        'follower_count': 61,
+        'description': 'Musician',
+        'country': 'United States'
+    },
+    {
+        'name': 'Justin Timberlake',
+        'follower_count': 59,
+        'description': 'Musician and actor',
+        'country': 'United States'
+    },
+    {
+        'name': 'UEFA Champions League',
+        'follower_count': 58,
+        'description': 'Club football competition',
+        'country': 'Europe'
+    },
+    {
+        'name': 'NASA',
+        'follower_count': 56,
+        'description': 'Space agency',
+        'country': 'United States'
+    },
+    {
+        'name': 'Emma Watson',
+        'follower_count': 56,
+        'description': 'Actress',
+        'country': 'United Kingdom'
+    },
+    {
+        'name': 'Shawn Mendes',
+        'follower_count': 57,
+        'description': 'Musician',
+        'country': 'Canada'
+    },
+    {
+        'name': 'Virat Kohli',
+        'follower_count': 55,
+        'description': 'Cricketer',
+        'country': 'India'
+    },
+    {
+        'name': 'Gigi Hadid',
+        'follower_count': 54,
+        'description': 'Model',
+        'country': 'United States'
+    },
+    {
+        'name': 'Priyanka Chopra Jonas',
+        'follower_count': 53,
+        'description': 'Actress and musician',
+        'country': 'India'
+    },
+    {
+        'name': '9GAG',
+        'follower_count': 52,
+        'description': 'Social media platform',
+        'country': 'China'
+    },
+    {
+        'name': 'Ronaldinho',
+        'follower_count': 51,
+        'description': 'Footballer',
+        'country': 'Brasil'
+    },
+    {
+        'name': 'Maluma',
+        'follower_count': 50,
+        'description': 'Musician',
+        'country': 'Colombia'
+    },
+    {
+        'name': 'Camila Cabello',
+        'follower_count': 49,
+        'description': 'Musician',
+        'country': 'Cuba'
+    },
+    {
+        'name': 'NBA',
+        'follower_count': 47,
+        'description': 'Club Basketball Competition',
+        'country': 'United States'
     }
 ]
