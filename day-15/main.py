@@ -50,6 +50,7 @@ def print_all():
     print(coffee())
 
 
+os.system('cls')
 user_choice = input(
     'What would you like? (espresso/latte/cappuccino)\nInput -> ')
 if user_choice == 'espresso':
