@@ -45,9 +45,14 @@ def coffee():
 
 
 def report():
-    print(MENU['ingredients']['water'])
-    print(MENU['ingredients']['milk'])
-    print(MENU['ingredients']['coffee'])
+    print(MENU['espresso']['ingredients']['water'] + MENU['espresso']
+          ['ingredients']['milk'] + MENU['espresso']['ingredients']['coffee'])
+    print(MENU['latte']['ingredients']['water'] + MENU['espresso']
+          ['ingredients']['milk'] + MENU['espresso']['ingredients']['coffee'])
+    print(MENU['cappuccino']['ingredients']['water'] + MENU['espresso']
+          ['ingredients']['milk'] + MENU['espresso']['ingredients']['coffee'])
+    # print(MENU['ingredients']['milk'])
+    # print(MENU['ingredients']['coffee'])
 
 
 def print_all():
