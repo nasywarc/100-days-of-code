@@ -60,6 +60,6 @@ elif user_choice == 'latte':
 elif user_choice == 'cappuccino':
     print_all()
 elif user_choice == 'off':
-    pass
+    exit()
 elif user_choice == 'report':
     pass
