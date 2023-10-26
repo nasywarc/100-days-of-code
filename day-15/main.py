@@ -60,6 +60,7 @@ elif user_choice == 'latte':
 elif user_choice == 'cappuccino':
     print_all()
 elif user_choice == 'off':
+    print('You\'ve turned off the coffee machine.')
     exit()
 elif user_choice == 'report':
     pass
