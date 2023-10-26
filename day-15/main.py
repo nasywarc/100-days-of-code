@@ -44,6 +44,12 @@ def coffee():
     return remain_coffee
 
 
+def report():
+    print(MENU['ingredients']['water'])
+    print(MENU['ingredients']['milk'])
+    print(MENU['ingredients']['coffee'])
+
+
 def print_all():
     print(water())
     print(milk())
@@ -63,4 +69,4 @@ elif user_choice == 'off':
     print('You\'ve turned off the coffee machine.')
     exit()
 elif user_choice == 'report':
-    pass
+    report()
