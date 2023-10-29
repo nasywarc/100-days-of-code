@@ -16,6 +16,14 @@ def coffee():
     pass
 
 
+def insert_coin():
+    print('Please insert coins.')
+    quarters = int(input('Quarters\t: '))
+    dimes = int(input('Dimes\t: '))
+    nickles = int(input('Nickles\t: '))
+    pennies = int(input('Pennies\t: '))
+
+
 def money_count():
     pass
 
