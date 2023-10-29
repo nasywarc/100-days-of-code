@@ -16,12 +16,20 @@ def coffee():
     pass
 
 
-def insert_coin():
+def insert_coin(price, coffee):
     print('Please insert coins.')
-    quarters = int(input('Quarters\t: '))
-    dimes = int(input('Dimes\t: '))
-    nickles = int(input('Nickles\t: '))
-    pennies = int(input('Pennies\t: '))
+    quarters = float(input('Quarters: '))
+    dimes = float(input('Dimes\t: '))
+    nickles = float(input('Nickles\t: '))
+    pennies = float(input('Pennies\t: '))
+    total = (0.25 * quarters) + (0.1 * dimes) + \
+        (0.05 * nickles) + (0.01 * pennies)
+    if total > price:
+        price(f'Here is ${total-price} in change.')
+    elif total < price:
+        print('Sorry that\'s not enough money. Money refunded.')
+    else:
+        price(f'Here is your {coffee}, enjoy!')
 
 
 def money_count():
@@ -44,11 +52,14 @@ os.system('cls')
 user_choice = input(
     'What would you like? (espresso/latte/cappuccino) : ')
 if user_choice == 'espresso':
-    pass
+    price = MENU['espresso']['cost']
+    insert_coin(price, user_choice)
 elif user_choice == 'latte':
-    pass
+    price = MENU['latte']['cost']
+    insert_coin(price, user_choice)
 elif user_choice == 'cappuccino':
-    pass
+    price = MENU['cappuccino']['cost']
+    insert_coin(price, user_choice)
 elif user_choice == 'off':
     print('\nYou\'ve turned off the coffee machine.')
     exit()
