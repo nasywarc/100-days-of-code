@@ -34,6 +34,23 @@ def report():
     print(f'Money\t: ${money_earned}\n')
 
 
+def checking_stock(coffee):
+    if water_stock - MENU[f'{coffee}']['ingredients']['water'] > 0:
+        if coffee != 'espresso':
+            if milk_stock - MENU[f'{coffee}']['ingredients']['milk'] > 0:
+                if coffee_stock - MENU[f'{coffee}']['ingredients']['coffee'] > 0:
+                    return True
+                else:
+                    return False
+            else:
+                return False
+        else:
+            if coffee_stock - MENU[f'{coffee}']['ingredients']['coffee'] > 0:
+                return True
+    else:
+        return False
+
+
 def charge_stock(coffee):
     global water_stock, milk_stock, coffee_stock
     check_stock = True
@@ -74,21 +91,21 @@ while program:
     if user_choice == 'espresso':
         emote = '☕'
         price = MENU['espresso']['cost']
-        if charge_stock(user_choice):
+        if checking_stock(user_choice):
             insert_coin(price, user_choice, emote)
             if insert_coin:
                 money_count(user_choice)
     elif user_choice == 'latte':
         emote = '🥤'
         price = MENU['latte']['cost']
-        if charge_stock(user_choice):
+        if checking_stock(user_choice):
             insert_coin(price, user_choice, emote)
             if insert_coin:
                 money_count(user_choice)
     elif user_choice == 'cappuccino':
         emote = '🍵'
         price = MENU['cappuccino']['cost']
-        if charge_stock(user_choice):
+        if checking_stock(user_choice):
             insert_coin(price, user_choice, emote)
             if insert_coin:
                 money_count(user_choice)
