@@ -35,20 +35,20 @@ def report():
 
 
 def checking_stock(coffee):
-    if water_stock - MENU[f'{coffee}']['ingredients']['water'] > 0:
+    if water_stock - MENU[f'{coffee}']['ingredients']['water'] >= 0:
         if coffee != 'espresso':
-            if milk_stock - MENU[f'{coffee}']['ingredients']['milk'] > 0:
-                if coffee_stock - MENU[f'{coffee}']['ingredients']['coffee'] > 0:
-                    return True
+            if milk_stock - MENU[f'{coffee}']['ingredients']['milk'] >= 0:
+                if coffee_stock - MENU[f'{coffee}']['ingredients']['coffee'] >= 0:
+                    return 'ready'
                 else:
-                    return False
+                    return 'coffee'
             else:
-                return False
+                return 'milk'
         else:
-            if coffee_stock - MENU[f'{coffee}']['ingredients']['coffee'] > 0:
-                return True
+            if coffee_stock - MENU[f'{coffee}']['ingredients']['coffee'] >= 0:
+                return 'ready'
     else:
-        return False
+        return 'water'
 
 
 def charge_stock(coffee):
@@ -56,24 +56,24 @@ def charge_stock(coffee):
     check_stock = True
 
     water_stock -= MENU[f'{coffee}']['ingredients']['water']
-    if water_stock <= 0:
-        print('Sorry there is not enough water.\n')
-        water_stock += MENU[f'{coffee}']['ingredients']['water']
-        check_stock = False
+    # if water_stock <= 0:
+    #     print('Sorry there is not enough water.\n')
+    #     water_stock += MENU[f'{coffee}']['ingredients']['water']
+    #     check_stock = False
 
     if coffee != 'espresso' and check_stock:
         milk_stock -= MENU[f'{coffee}']['ingredients']['milk']
-        if milk_stock <= 0:
-            print('Sorry there is not enough milk.\n')
-            milk_stock += MENU[f'{coffee}']['ingredients']['milk']
-            check_stock = False
+        # if milk_stock <= 0:
+        #     print('Sorry there is not enough milk.\n')
+        #     milk_stock += MENU[f'{coffee}']['ingredients']['milk']
+        #     check_stock = False
 
     if check_stock:
         coffee_stock -= MENU[f'{coffee}']['ingredients']['coffee']
-        if coffee_stock <= 0:
-            print('Sorry there is not enough coffee.\n')
-            coffee_stock += MENU[f'{coffee}']['ingredients']['coffee']
-            check_stock = False
+        # if coffee_stock <= 0:
+        #     print('Sorry there is not enough coffee.\n')
+        #     coffee_stock += MENU[f'{coffee}']['ingredients']['coffee']
+        #     check_stock = False
 
     return check_stock
 
@@ -91,24 +91,35 @@ while program:
     if user_choice == 'espresso':
         emote = '☕'
         price = MENU['espresso']['cost']
-        if checking_stock(user_choice):
+        if checking_stock(user_choice) == 'ready':
             insert_coin(price, user_choice, emote)
             if insert_coin:
+                charge_stock(user_choice)
                 money_count(user_choice)
+        else:
+            print(f'Sorry there is not enough {checking_stock}.\n')
     elif user_choice == 'latte':
         emote = '🥤'
         price = MENU['latte']['cost']
-        if checking_stock(user_choice):
+        if checking_stock(user_choice) == 'ready':
             insert_coin(price, user_choice, emote)
             if insert_coin:
+                charge_stock(user_choice)
                 money_count(user_choice)
+        else:
+            print(
+                f'Sorry there is not enough {checking_stock(user_choice)}.\n')
     elif user_choice == 'cappuccino':
         emote = '🍵'
         price = MENU['cappuccino']['cost']
-        if checking_stock(user_choice):
+        if checking_stock(user_choice) == 'ready':
             insert_coin(price, user_choice, emote)
             if insert_coin:
+                charge_stock(user_choice)
                 money_count(user_choice)
+        else:
+            print(
+                f'Sorry there is not enough {checking_stock(user_choice)}.\n')
     elif user_choice == 'off':
         print('\nYou\'ve turned off the coffee machine.')
         program = False
