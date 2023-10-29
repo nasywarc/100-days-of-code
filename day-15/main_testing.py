@@ -1,22 +1,6 @@
 import os
-import random
 from coffee_machine import MENU
 from coffee_machine import resources
-
-
-def water(coffee):
-    global water_stock
-    pass
-
-
-def milk(coffee):
-    global milk_stock
-    pass
-
-
-def coffee(coffee):
-    global coffee_stock
-    pass
 
 
 def insert_coin(price, coffee, emote):
@@ -37,13 +21,14 @@ def insert_coin(price, coffee, emote):
 
 
 def money_count(coffee):
+    global money_earned
     money_earned += MENU[f'{coffee}']['cost']
 
 
 def report():
     print(f'Water\t: {water_stock}ml')
-    print(f'Milk\t: {water_stock}ml')
-    print(f'Coffee\t: {water_stock}g')
+    print(f'Milk\t: {milk_stock}ml')
+    print(f'Coffee\t: {coffee_stock}g')
     print(f'Money\t: ${money_earned}')
 
 
@@ -87,16 +72,19 @@ while program:
         price = MENU['espresso']['cost']
         if charge_stock(user_choice):
             insert_coin(price, user_choice, emote)
+            money_count(user_choice)
     elif user_choice == 'latte':
         emote = '🥤'
         price = MENU['latte']['cost']
         if charge_stock(user_choice):
             insert_coin(price, user_choice, emote)
+            money_count(user_choice)
     elif user_choice == 'cappuccino':
         emote = '🍵'
         price = MENU['cappuccino']['cost']
         if charge_stock(user_choice):
             insert_coin(price, user_choice, emote)
+            money_count(user_choice)
     elif user_choice == 'off':
         print('\nYou\'ve turned off the coffee machine.')
         program = False
