@@ -1,6 +1,5 @@
 import os
-from coffee_machine import MENU
-from coffee_machine import resources
+from coffee_machine import MENU, resources
 
 
 def insert_coin(price, coffee, emote):
