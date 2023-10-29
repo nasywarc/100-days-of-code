@@ -57,26 +57,23 @@ def charge_stock(coffee):
     check_stock = True
 
     water_stock -= MENU[f'{coffee}']['ingredients']['water']
-    # if water_stock <= 0:
-    #     print('Sorry there is not enough water.\n')
-    #     water_stock += MENU[f'{coffee}']['ingredients']['water']
-    #     check_stock = False
 
     if coffee != 'espresso' and check_stock:
         milk_stock -= MENU[f'{coffee}']['ingredients']['milk']
-        # if milk_stock <= 0:
-        #     print('Sorry there is not enough milk.\n')
-        #     milk_stock += MENU[f'{coffee}']['ingredients']['milk']
-        #     check_stock = False
 
     if check_stock:
         coffee_stock -= MENU[f'{coffee}']['ingredients']['coffee']
-        # if coffee_stock <= 0:
-        #     print('Sorry there is not enough coffee.\n')
-        #     coffee_stock += MENU[f'{coffee}']['ingredients']['coffee']
-        #     check_stock = False
 
     return check_stock
+
+
+def step(choice):
+    if checking_stock(choice) == 'ready':
+        if insert_coin(price, user_choice, emote):
+            charge_stock(choice)
+            money_count(choice)
+    else:
+        print(f'Sorry there is not enough {checking_stock(choice)}.\n')
 
 
 money_earned = 0
@@ -92,34 +89,25 @@ while program:
     if user_choice == 'espresso':
         emote = '☕'
         price = MENU['espresso']['cost']
-        if checking_stock(user_choice) == 'ready':
-            if insert_coin(price, user_choice, emote):
-                charge_stock(user_choice)
-                money_count(user_choice)
-        else:
-            print(f'Sorry there is not enough {checking_stock}.\n')
+        step(user_choice)
+
     elif user_choice == 'latte':
         emote = '🥤'
         price = MENU['latte']['cost']
-        if checking_stock(user_choice) == 'ready':
-            if insert_coin(price, user_choice, emote):
-                charge_stock(user_choice)
-                money_count(user_choice)
-        else:
-            print(
-                f'Sorry there is not enough {checking_stock(user_choice)}.\n')
+        step(user_choice)
+
     elif user_choice == 'cappuccino':
         emote = '🍵'
         price = MENU['cappuccino']['cost']
-        if checking_stock(user_choice) == 'ready':
-            if insert_coin(price, user_choice, emote):
-                charge_stock(user_choice)
-                money_count(user_choice)
-        else:
-            print(
-                f'Sorry there is not enough {checking_stock(user_choice)}.\n')
+        step(user_choice)
+
     elif user_choice == 'off':
         print('\nYou\'ve turned off the coffee machine.')
         program = False
+
     elif user_choice == 'report':
         report()
+
+    else:
+        print('\nYour input is invalid.')
+        program = False
