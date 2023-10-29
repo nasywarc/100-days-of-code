@@ -57,10 +57,8 @@ def charge_stock(coffee):
     check_stock = True
 
     water_stock -= MENU[f'{coffee}']['ingredients']['water']
-
     if coffee != 'espresso' and check_stock:
         milk_stock -= MENU[f'{coffee}']['ingredients']['milk']
-
     if check_stock:
         coffee_stock -= MENU[f'{coffee}']['ingredients']['coffee']
 
@@ -86,28 +84,24 @@ os.system('cls')
 while program:
     user_choice = input(
         'What would you like? (espresso/latte/cappuccino) : ')
+
     if user_choice == 'espresso':
         emote = '☕'
         price = MENU['espresso']['cost']
         step(user_choice)
-
     elif user_choice == 'latte':
         emote = '🥤'
         price = MENU['latte']['cost']
         step(user_choice)
-
     elif user_choice == 'cappuccino':
         emote = '🍵'
         price = MENU['cappuccino']['cost']
         step(user_choice)
-
     elif user_choice == 'off':
         print('\nYou\'ve turned off the coffee machine.')
         program = False
-
     elif user_choice == 'report':
         report()
-
     else:
         print('\nYour input is invalid.')
         program = False
