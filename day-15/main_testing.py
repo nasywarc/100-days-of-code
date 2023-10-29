@@ -35,12 +35,6 @@ def report():
 def charge_stock(coffee):
     global water_stock, milk_stock, coffee_stock
     check_stock = True
-    if coffee != 'espresso':
-        milk_stock -= MENU[f'{coffee}']['ingredients']['milk']
-        if milk_stock <= 0:
-            print('Sorry there is not enough milk.')
-            milk_stock += MENU[f'{coffee}']['ingredients']['milk']
-            check_stock = False
 
     water_stock -= MENU[f'{coffee}']['ingredients']['water']
     if water_stock <= 0:
@@ -48,11 +42,19 @@ def charge_stock(coffee):
         water_stock += MENU[f'{coffee}']['ingredients']['water']
         check_stock = False
 
-    coffee_stock -= MENU[f'{coffee}']['ingredients']['coffee']
-    if coffee_stock <= 0:
-        print('Sorry there is not enough coffee.')
-        coffee_stock += MENU[f'{coffee}']['ingredients']['coffee']
-        check_stock = False
+    if coffee != 'espresso' and check_stock:
+        milk_stock -= MENU[f'{coffee}']['ingredients']['milk']
+        if milk_stock <= 0:
+            print('Sorry there is not enough milk.')
+            milk_stock += MENU[f'{coffee}']['ingredients']['milk']
+            check_stock = False
+
+    if check_stock:
+        coffee_stock -= MENU[f'{coffee}']['ingredients']['coffee']
+        if coffee_stock <= 0:
+            print('Sorry there is not enough coffee.')
+            coffee_stock += MENU[f'{coffee}']['ingredients']['coffee']
+            check_stock = False
 
     return check_stock
 
