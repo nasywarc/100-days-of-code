@@ -16,7 +16,7 @@ def coffee():
     pass
 
 
-def insert_coin(price, coffee):
+def insert_coin(price, coffee, emote):
     print('Please insert coins.')
     quarters = float(input('Quarters: '))
     dimes = float(input('Dimes\t: '))
@@ -25,11 +25,12 @@ def insert_coin(price, coffee):
     total = (0.25 * quarters) + (0.1 * dimes) + \
         (0.05 * nickles) + (0.01 * pennies)
     if total > price:
-        price(f'Here is ${total-price} in change.')
+        print(f'\nHere is ${round(total-price, 2)} in change.')
+        print(f'\nHere is your {coffee} {emote}\nEnjoy!')
     elif total < price:
-        print('Sorry that\'s not enough money. Money refunded.')
+        print('\nSorry that\'s not enough money. Money refunded.')
     else:
-        price(f'Here is your {coffee}, enjoy!')
+        print(f'\nHere is your {coffee} {emote}\nEnjoy!')
 
 
 def money_count():
@@ -52,14 +53,17 @@ os.system('cls')
 user_choice = input(
     'What would you like? (espresso/latte/cappuccino) : ')
 if user_choice == 'espresso':
+    emote = '☕'
     price = MENU['espresso']['cost']
-    insert_coin(price, user_choice)
+    insert_coin(price, user_choice, emote)
 elif user_choice == 'latte':
+    emote = '🥤'
     price = MENU['latte']['cost']
-    insert_coin(price, user_choice)
+    insert_coin(price, user_choice, emote)
 elif user_choice == 'cappuccino':
+    emote = '🍵'
     price = MENU['cappuccino']['cost']
-    insert_coin(price, user_choice)
+    insert_coin(price, user_choice, emote)
 elif user_choice == 'off':
     print('\nYou\'ve turned off the coffee machine.')
     exit()
