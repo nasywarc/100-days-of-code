@@ -14,6 +14,7 @@ def insert_coin(price, coffee, emote):
     if total > price:
         print(f'\nHere is ${round(total-price, 2)} in change.')
         print(f'\nHere is your {coffee} {emote}\nEnjoy!\n')
+        return True
     elif total < price:
         print('\nSorry that\'s not enough money. Money refunded.\n')
         return False
@@ -92,8 +93,7 @@ while program:
         emote = '☕'
         price = MENU['espresso']['cost']
         if checking_stock(user_choice) == 'ready':
-            insert_coin(price, user_choice, emote)
-            if insert_coin:
+            if insert_coin(price, user_choice, emote):
                 charge_stock(user_choice)
                 money_count(user_choice)
         else:
@@ -102,8 +102,7 @@ while program:
         emote = '🥤'
         price = MENU['latte']['cost']
         if checking_stock(user_choice) == 'ready':
-            insert_coin(price, user_choice, emote)
-            if insert_coin:
+            if insert_coin(price, user_choice, emote):
                 charge_stock(user_choice)
                 money_count(user_choice)
         else:
@@ -113,8 +112,7 @@ while program:
         emote = '🍵'
         price = MENU['cappuccino']['cost']
         if checking_stock(user_choice) == 'ready':
-            insert_coin(price, user_choice, emote)
-            if insert_coin:
+            if insert_coin(price, user_choice, emote):
                 charge_stock(user_choice)
                 money_count(user_choice)
         else:
