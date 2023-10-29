@@ -21,7 +21,10 @@ def money_count():
 
 
 def report():
-    pass
+    print(f'Water\t: {water_stock}ml')
+    print(f'Milk\t: {water_stock}ml')
+    print(f'Coffee\t: {water_stock}g')
+    print(f'Money\t: ${money_earned}')
 
 
 money_earned = 0
@@ -31,7 +34,7 @@ coffee_stock = resources['coffee']
 
 os.system('cls')
 user_choice = input(
-    'What would you like? (espresso/latte/cappuccino)\nInput -> ')
+    'What would you like? (espresso/latte/cappuccino) : ')
 if user_choice == 'espresso':
     pass
 elif user_choice == 'latte':
@@ -39,7 +42,7 @@ elif user_choice == 'latte':
 elif user_choice == 'cappuccino':
     pass
 elif user_choice == 'off':
-    print('You\'ve turned off the coffee machine.')
+    print('\nYou\'ve turned off the coffee machine.')
     exit()
 elif user_choice == 'report':
     report()
