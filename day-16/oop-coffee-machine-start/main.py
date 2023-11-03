@@ -7,4 +7,4 @@ item = Menu()
 user_input = input('Choice : ')
 
 item.find_drink(user_input)
-print(item.get_items())
+item.get_items()
