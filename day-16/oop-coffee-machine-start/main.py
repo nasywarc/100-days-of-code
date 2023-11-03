@@ -2,8 +2,9 @@ from menu import Menu, MenuItem
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
-coffee = Menu()
+item = Menu()
 
-user_choice = input('Choice : ')
+user_input = input('Choice : ')
 
-for coffee.menu() 
+item.find_drink(user_input)
+print(item.get_items())
