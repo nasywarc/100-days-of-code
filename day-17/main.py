@@ -1,8 +1,8 @@
 from data import question_data
 from question_model import Question
 
-new_q = []
+question_bank = []
 
 for index in range(len(question_data)-1):
-    new_q.append(
+    question_bank.append(
         Question(question_data[index]['text'], question_data[index]['answer']))
