@@ -4,4 +4,5 @@ class QuizBrain:
         self.question_list = question_list
 
     def next_question(self):
-        pass
+        answer = input(
+            f'Q.{(self.question_number)+1}{self.question_list[self.question_number]}')
