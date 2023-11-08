@@ -14,27 +14,28 @@
 # print(string.upper())
 # # string method
 
-class Dog:
 
-    def __init__(self, name, age):
-        # make attribute
-        self.name = name
-        self.age = age
+# class Dog:
 
-    def get_name(self):
-        return self.name
+#     def __init__(self, name, age):
+#         # make attribute
+#         self.name = name
+#         self.age = age
 
-    def get_age(self):
-        return self.age
+#     def get_name(self):
+#         return self.name
 
-    def set_age(self, age):
-        self.age = age
+#     def get_age(self):
+#         return self.age
+
+#     def set_age(self, age):
+#         self.age = age
 
 
-d = Dog('Tim', 34)
-print(d.get_name())
-d.set_age(10)
-print(d.get_age())
-d2 = Dog('Bill', 12)
-print(d2.get_name())
-print(d2.get_age())
+# d = Dog('Tim', 34)
+# print(d.get_name())
+# d.set_age(10)
+# print(d.get_age())
+# d2 = Dog('Bill', 12)
+# print(d2.get_name())
+# print(d2.get_age())
