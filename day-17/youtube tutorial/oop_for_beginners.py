@@ -10,6 +10,17 @@
 # print(type(x))
 
 
-string = 'hello'
-print(string.upper())
+# string = 'hello'
+# print(string.upper())
 # # string method
+
+class Dog:
+
+    def bark(self):
+        print('bark')
+
+
+d = Dog()
+print(type(d))
+# use a method on the instance
+d.bark()
