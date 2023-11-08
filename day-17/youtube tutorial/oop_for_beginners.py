@@ -39,3 +39,20 @@
 # d2 = Dog('Bill', 12)
 # print(d2.get_name())
 # print(d2.get_age())
+
+
+class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade  # 1- 100
+
+    def get_grade(self):
+        return self.grade
+
+
+class Course:
+    def __init__(self, name, max_student):
+        self.name = name
+        self.max_student = max_student
+        self.student = []
