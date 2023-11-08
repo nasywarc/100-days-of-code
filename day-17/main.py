@@ -10,5 +10,7 @@ for index in range(len(question_data)-1):
 
 quiz = QuizBrain(question_bank)
 
-for question in range(len(question_bank)):
+print(len(question_bank))
+
+for question in range(len(question_bank)+1):
     quiz.next_question()
