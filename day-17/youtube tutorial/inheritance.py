@@ -24,27 +24,34 @@
 
 
 # with inheritance
-class Animal:
+class Pet:
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
     def speak(self):
-        pass
+        print('I dont know what to say')
 
 
-class Cat(Animal):
+class Cat(Pet):
     def speak(self):
         print('Meow')
 
 
-class Dog(Animal):
+class Dog(Pet):
     def speak(self):
         print('Bark')
 
 
+class Fish(Pet):
+    pass
+
+
 c1 = Cat('Kitty', 1)
 d1 = Dog('Doggy', 2)
+f1 = Fish('Bubble', 3)
 
+# same method in child from parents will override the method
 c1.speak()
 d1.speak()
+f1.speak()
