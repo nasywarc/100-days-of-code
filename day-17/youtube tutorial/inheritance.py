@@ -1,29 +1,3 @@
-# class Cat:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
-
-#     def speak(self):
-#         print('Meow')
-
-
-# class Dog:
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
-
-#     def speak(self):
-#         print('Bark')
-
-
-# c1 = Cat('Kitty', 1)
-# d1 = Dog('Doggy', 2)
-
-# c1.speak()
-# d1.speak()
-
-
-# with inheritance
 class Pet:
     def __init__(self, name, age):
         self.name = name
@@ -36,6 +10,7 @@ class Pet:
         print('I dont know what to say.')
 
 
+# same method in child from parents will override the method
 class Cat(Pet):
     def __init__(self, name, age, color):
         super().__init__(name, age)
@@ -62,7 +37,6 @@ c1 = Cat('Kitty', 1, 'White')
 d1 = Dog('Doggy', 2)
 f1 = Fish('Bubble', 3)
 
-# same method in child from parents will override the method
 c1.show()
 c1.speak()
 d1.show()
