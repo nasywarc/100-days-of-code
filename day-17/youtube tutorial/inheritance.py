@@ -14,3 +14,10 @@ class Dog:
 
     def speak(self):
         print('Bark')
+
+
+c1 = Cat('Kitty', 1)
+d1 = Dog('Doggy', 2)
+
+c1.speak()
+d1.speak()
