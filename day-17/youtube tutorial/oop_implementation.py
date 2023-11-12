@@ -20,6 +20,21 @@ class Person:
         return cls.person_count
 
 
-p1 = Person('Brody', 23, 'Brooklyn')
-p1.show()
-print(Person.show_person_count())
+class Seller(Person):
+    def __init__(self, name, age, address, store_name):
+        super().__init__(name, age, address)
+        self.store_name = store_name
+
+
+class Buyer(Person):
+    def __init__(self, name, age, address, payment):
+        super().__init__(name, age, address)
+        self.payment = payment
+
+
+s1 = Seller('Tony', 31, 'London', 'Elecstore')
+b1 = Buyer('Rick', 18, 'Manchester', 'cash')
+
+# p1 = Person('Brody', 23, 'Brooklyn')
+# p1.show()
+# print(Person.show_person_count())
