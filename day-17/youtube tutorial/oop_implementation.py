@@ -9,3 +9,7 @@ class Person:
 
     def add(cls):
         Person.person_count += 1
+
+    def show(self):
+        print(
+            f'Hello I\'m {self.name}, {self.age} years old, and i live in {self.address}')
