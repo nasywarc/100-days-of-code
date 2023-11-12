@@ -11,7 +11,8 @@ class Person:
     def add(cls):
         cls.person_count += 1
 
-    def show_person_count(self):
+    @classmethod
+    def show_person_count(cls):
         return Person.person_count
 
     def show(self):
@@ -21,4 +22,4 @@ class Person:
 
 p1 = Person('Brody', 23, 'Brooklyn')
 p1.show()
-print(p1.show_person_count())
+print(Person.show_person_count())
