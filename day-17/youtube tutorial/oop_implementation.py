@@ -7,6 +7,10 @@ class Person:
         self.address = address
         Person.add()
 
+    def show(self):
+        print(
+            f'Hello I\'m {self.name}, {self.age} years old, and i live in {self.address}.')
+
     @classmethod
     def add(cls):
         cls.person_count += 1
@@ -14,10 +18,6 @@ class Person:
     @classmethod
     def show_person_count(cls):
         return cls.person_count
-
-    def show(self):
-        print(
-            f'Hello I\'m {self.name}, {self.age} years old, and i live in {self.address}.')
 
 
 p1 = Person('Brody', 23, 'Brooklyn')
