@@ -13,7 +13,7 @@ class Person:
 
     @classmethod
     def show_person_count(cls):
-        return Person.person_count
+        return cls.person_count
 
     def show(self):
         print(
