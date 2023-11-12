@@ -11,10 +11,14 @@ class Person:
     def add(cls):
         cls.person_count += 1
 
+    def show_person_count(self):
+        return Person.person_count
+
     def show(self):
         print(
-            f'Hello I\'m {self.name}, {self.age} years old, and i live in {self.address}')
+            f'Hello I\'m {self.name}, {self.age} years old, and i live in {self.address}.')
 
 
 p1 = Person('Brody', 23, 'Brooklyn')
 p1.show()
+print(p1.show_person_count())
