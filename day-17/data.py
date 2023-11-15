@@ -1,4 +1,4 @@
-question_datas = [
+question_data1 = [
     {"text": "A slug's blood is green.", "answer": "True"},
     {"text": "The loudest animal is the African Elephant.", "answer": "False"},
     {"text": "Approximately one quarter of human bones are in the feet.", "answer": "True"},
@@ -14,9 +14,10 @@ question_datas = [
     {"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
 ]
 
-question_data = {"response_code": 0,
-                 "results":
-                     [{"category": "Science: Computers",
+question_data2 = {"response_code": 0,
+                  "results":
+                  [
+                      {"category": "Science: Computers",
                        "type": "boolean",
                        "difficulty": "easy",
                        "question": "Linus Torvalds created Linux and Git.",
@@ -75,4 +76,6 @@ question_data = {"response_code": 0,
                        "question": "Linux was first created as an alternative to Windows XP.",
                        "correct_answer": "False",
                        "incorrect_answers": ["True"]
-                       }]}
+                       }
+                  ]
+                  }

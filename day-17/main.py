@@ -1,11 +1,11 @@
-from data import question_data
+from data import question_data2
 from question_model import Question
 from quiz_brain import QuizBrain
 
 question_bank = []
-for index in range(len(question_data['results'])):
+for index in range(len(question_data2['results'])):
     question_bank.append(
-        Question(question_data['results'][index]['question'], question_data['results'][index]['correct_answer']))
+        Question(question_data2['results'][index]['question'], question_data2['results'][index]['correct_answer']))
 
 quiz = QuizBrain(question_bank)
 
