@@ -1,4 +1,3 @@
-import time
 import math
 from tkinter import *
 # ---------------------------- CONSTANTS ------------------------------- #
@@ -13,8 +12,18 @@ LONG_BREAK_MIN = 20
 reps = 0
 work_reps = 0
 checkmark = ''
+timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- #
+
+
+def reset_timer():
+    global reps
+    window.after_cancel(timer)
+    canvas.itemconfig(timer_text, text='00:00')
+    timer_label.config(text='Timer', fg=GREEN)
+    checkmark_label.config(text='')
+    reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
@@ -53,7 +62,8 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f'{count_min}:{count_sec}')
 
     if count > 0:
-        window.after(1000, count_down, count - 1)
+        global timer
+        timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
         if reps % 2 == 0:
@@ -84,7 +94,7 @@ checkmark_label.grid(row=3, column=1)
 start_button = Button(text='Start', highlightthickness=0, command=start_timer)
 start_button.grid(row=2, column=0)
 
-reset_button = Button(text='Reset', highlightthickness=0)
+reset_button = Button(text='Reset', highlightthickness=0, command=reset_timer)
 reset_button.grid(row=2, column=2)
 
 window.mainloop()
