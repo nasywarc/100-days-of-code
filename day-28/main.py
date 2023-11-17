@@ -11,6 +11,7 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
+work_reps = 0
 
 # ---------------------------- TIMER RESET ------------------------------- #
 
@@ -18,7 +19,7 @@ reps = 0
 
 
 def start_timer():
-    global reps
+    global reps, work_reps
     reps += 1
 
     # work_sec = WORK_MIN*60
@@ -31,12 +32,16 @@ def start_timer():
     if reps % 8 == 0:
         count_down(long_break_sec)
         timer_label.config(text='Break', fg=RED)
+        checkmark_label.config(text='✔️'*work_reps)
     elif reps % 2 == 0:
         count_down(short_break_sec)
         timer_label.config(text='Break', fg=PINK)
+        checkmark_label.config(text='✔️'*work_reps)
     else:
         count_down(work_sec)
         timer_label.config(text='Work', fg=GREEN)
+        checkmark_label.config(text='✔️'*work_reps)
+        work_reps += 1
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
@@ -73,7 +78,7 @@ canvas.grid(row=1, column=1)
 timer_label = Label(text='Timer', fg=GREEN, font=(FONT_NAME, 50), bg=YELLOW)
 timer_label.grid(row=0, column=1)
 
-checkmark_label = Label(text='✔️', fg=GREEN, bg=YELLOW)
+checkmark_label = Label(text='', fg=GREEN, bg=YELLOW)
 checkmark_label.grid(row=3, column=1)
 
 start_button = Button(text='Start', highlightthickness=0, command=start_timer)
