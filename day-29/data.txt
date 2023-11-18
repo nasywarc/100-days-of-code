@@ -3,3 +3,17 @@ Google		dummy@gmail.com		googlepassword
 Twitter		dummy@gmail.com		twitterpassword
 PUBG		dummy@gmail.com		pubgpassword
 Github		dummy@gmail.com		githubpassword
+Amazon		dummy@gmail.com		amazonpass
+WhatsApp		dummy@gmail.com		whatsapppass
+Gojek		dummy@gmail.com		gojekpass
+TikTok		dummy@gmail.com		tiktokpass
+Classroom		dummy@gmail.com		classroompass
+Canva		dummy@gmail.com		canvapass
+Ebay		dummy@gmail.com		ebaypass
+Shopee		dummy@gmail.com		shopeepass
+Tokopedia		dummy@gmail.com		tokpedpass
+message		dummy@gmail.com		boxtest
+Docs		dummy@gmail.com		docspass
+asking		dummy@gmail.com		test
+test		dummy@gmail.com		pass
+PyPi		dummy@gmail.com		*kG+%8QhI7kCe
