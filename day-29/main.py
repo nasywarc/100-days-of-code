@@ -22,19 +22,19 @@ email_usn_label.grid(row=2, column=0)
 password_label = Label(text='Password:')
 password_label.grid(row=3, column=0)
 
-website_entry = Entry(width=35)
-website_entry.grid(row=1, column=1, columnspan=2)
+website_entry = Entry()
+website_entry.grid(row=1, column=1, columnspan=2, sticky="EW")
 
-email_usn_entry = Entry(width=35)
-email_usn_entry.grid(row=2, column=1, columnspan=2)
+email_usn_entry = Entry()
+email_usn_entry.grid(row=2, column=1, columnspan=2, sticky="EW")
 
-password_entry = Entry(width=21)
-password_entry.grid(row=3, column=1)
+password_entry = Entry()
+password_entry.grid(row=3, column=1, sticky="EW")
 
 generate_button = Button(text='Generate Password')
-generate_button.grid(row=3, column=2)
+generate_button.grid(row=3, column=2, sticky="EW")
 
-add_button = Button(text='Add', width=36)
-add_button.grid(row=4, column=1, columnspan=2)
+add_button = Button(text='Add')
+add_button.grid(row=4, column=1, columnspan=2, sticky="EW")
 
 window.mainloop()
