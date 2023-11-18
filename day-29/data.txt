@@ -1,0 +1,5 @@
+Youtube		dummy@gmail.com		youtubepassword
+Google		dummy@gmail.com		googlepassword
+Twitter		dummy@gmail.com		twitterpassword
+PUBG		dummy@gmail.com		pubgpassword
+Github		dummy@gmail.com		githubpassword
