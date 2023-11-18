@@ -32,12 +32,9 @@ def start_timer():
     global reps, work_reps
     reps += 1
 
-    # work_sec = WORK_MIN*60
-    work_sec = 0.1*60  # testing
-    # short_break_sec = SHORT_BREAK_MIN*60
-    short_break_sec = 0.1*60  # testing
-    # long_break_sec = LONG_BREAK_MIN*60
-    long_break_sec = 0.1*60  # testing
+    work_sec = WORK_MIN*60
+    short_break_sec = SHORT_BREAK_MIN*60
+    long_break_sec = LONG_BREAK_MIN*60
 
     if reps % 8 == 0:
         count_down(long_break_sec)
