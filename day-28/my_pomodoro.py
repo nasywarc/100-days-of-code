@@ -5,6 +5,9 @@ PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
+BLACK = '#30332A'
+WHITE = '#FFF'
+BRIGHTPINK = '#FB7374'
 FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
@@ -21,7 +24,7 @@ def reset_timer():
     global reps
     window.after_cancel(timer)
     canvas.itemconfig(timer_text, text='00:00')
-    timer_label.config(text='Timer', fg=GREEN)
+    timer_label.config(text='Timer', fg=WHITE)
     checkmark_label.config(text='')
     canvas.itemconfig(timer_pict, image=work_png)
     reps = 0
@@ -43,15 +46,15 @@ def start_timer():
 
     if reps % 8 == 0:
         count_down(long_break_sec)
-        timer_label.config(text='Break', fg=RED)
-        canvas.itemconfig(timer_pict, image=rest_png)
+        timer_label.config(text='Break', fg=WHITE)
+        # canvas.itemconfig(timer_pict, image=rest_png)
     elif reps % 2 == 0:
         count_down(short_break_sec)
-        timer_label.config(text='Break', fg=PINK)
-        canvas.itemconfig(timer_pict, image=rest_png)
+        timer_label.config(text='Break', fg=WHITE)
+        # canvas.itemconfig(timer_pict, image=rest_png)
     else:
         count_down(work_sec)
-        timer_label.config(text='Work', fg=GREEN)
+        timer_label.config(text='Work', fg=WHITE)
         canvas.itemconfig(timer_pict, image=work_png)
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
@@ -80,9 +83,9 @@ def count_down(count):
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title('Pomodoro')
-window.config(padx=100, pady=50, bg=YELLOW)
+window.config(padx=100, pady=50, bg=BLACK)
 
-canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
+canvas = Canvas(width=200, height=224, bg=BLACK, highlightthickness=0)
 work_png = PhotoImage(file='work.png')
 rest_png = PhotoImage(file='rest.png')
 timer_pict = canvas.create_image(100, 112, image=work_png)
@@ -91,10 +94,11 @@ timer_text = canvas.create_text(100, 90, text='00:00', fill='white',
 canvas.grid(row=1, column=1)
 
 
-timer_label = Label(text='Timer', fg=GREEN, font=(FONT_NAME, 50), bg=YELLOW)
+timer_label = Label(text='Timer', fg=WHITE, font=(
+    FONT_NAME, 50, 'bold'), bg=BLACK)
 timer_label.grid(row=0, column=1)
 
-checkmark_label = Label(text='', fg=GREEN, bg=YELLOW)
+checkmark_label = Label(text='', fg=WHITE, bg=BLACK)
 checkmark_label.grid(row=3, column=1)
 
 start_button = Button(text='Start', highlightthickness=0, command=start_timer)
