@@ -39,9 +39,11 @@ def start_timer():
     if reps % 8 == 0:
         count_down(long_break_sec)
         timer_label.config(text='Break', fg=RED)
+        canvas.itemconfig(image='rest.png')
     elif reps % 2 == 0:
         count_down(short_break_sec)
         timer_label.config(text='Break', fg=PINK)
+        canvas.itemconfig(image='rest.png')
     else:
         count_down(work_sec)
         timer_label.config(text='Work', fg=GREEN)
@@ -75,8 +77,9 @@ window.title('Pomodoro')
 window.config(padx=100, pady=50, bg=YELLOW)
 
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
-tomato = PhotoImage(file='tomato.png')
-canvas.create_image(100, 112, image=tomato)
+work_png = PhotoImage(file='work.png')
+rest_png = PhotoImage(file='rest.png')
+canvas.create_image(100, 112, image=work_png)
 timer_text = canvas.create_text(100, 130, text='00:00', fill='white',
                                 font=(FONT_NAME, 35, 'bold'))
 canvas.grid(row=1, column=1)
