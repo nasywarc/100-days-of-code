@@ -12,6 +12,11 @@ def random_color():
 
 ########### Challenge 5 - Spirograph ########
 
+tim.speed('fastest')
+for direction in range (361):
+    if direction % 6 == 0:
+        tim.setheading(direction)
+        tim.circle(100)
 
 
 t.mainloop()
