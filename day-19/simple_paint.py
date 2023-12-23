@@ -45,4 +45,6 @@ screen.onkey(fun=move_right, key=('d'))
 screen.onkey(fun=move_left, key=('a'))
 screen.onkey(fun=paint_toggle, key=('space'))
 screen.onkey(fun=reset_screen, key=('r'))
+
+
 screen.exitonclick()
