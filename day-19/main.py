@@ -16,11 +16,16 @@ def clockwise():
 def c_clockwise():
     tim.left(10)
     
+def reset_screen():
+    tim.clear()
+    tim.reset()
+    
 screen.listen()
 screen.onkey(key='w', fun=move_forwards)
 screen.onkey(key='a', fun=c_clockwise)
 screen.onkey(key='s', fun=move_backwards)
 screen.onkey(key='d', fun=clockwise)
+screen.onkey(key='c', fun=reset_screen)
 
 
 screen.exitonclick()
