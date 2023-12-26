@@ -23,4 +23,5 @@ while game_is_on:
     for square in snake_length:
         square.forward(40)
 
+
 screen.exitonclick()
