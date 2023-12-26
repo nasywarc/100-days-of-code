@@ -1,7 +1,8 @@
-from time import sleep
+import time
 from turtle import Screen, Turtle
 
 screen = Screen()
+screen.tracer(0)
 screen.setup(width=600, height=600)
 screen.bgcolor('black')
 screen.title('Snake Game')
@@ -17,7 +18,9 @@ for square in range(0, 3):
 
 game_is_on = True
 while game_is_on:
+    screen.update()
+    time.sleep(0.5)
     for square in snake_length:
         square.forward(40)
-    
+
 screen.exitonclick()
