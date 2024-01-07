@@ -22,8 +22,9 @@ while game_is_on:
     time.sleep(0.5)
     for square in snake_length:
         square.forward(40)
-        if square.position(x=580) or square.position(x=-580) or square.position(y=580) or square.position(y=-580):
-            game_is_on = False 
+        if square.xcor() > 580 or square.xcor() < -580 or square.ycor() > 580 or square.ycor() < -580:
+            game_is_on = False
+
 
 
 screen.exitonclick()
