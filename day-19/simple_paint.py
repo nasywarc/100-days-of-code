@@ -23,8 +23,8 @@ def move_left():
         tim.setheading(180)
     tim.forward(10)
     
-    tim.setheading(180)
-    tim.left(10)
+    # tim.setheading(180)
+    # tim.left(10)
     
 def paint_toggle():
     if not tim.isdown():
