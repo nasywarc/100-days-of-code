@@ -1,29 +1,6 @@
 import time
 from turtle import Screen, Turtle
 
-def move_forward():
-    if head.heading() != 90:
-        head.setheading(90)
-    # head.forward(10)
-    
-def move_backward():
-    if head.heading() != 270:
-        head.setheading(270)
-    # head.forward(10)
-    
-def move_right():
-    if head.heading() != 0:
-        head.setheading(0)
-    # head.forward(10)
-    
-def move_left():
-    if head.heading() != 180:
-        head.setheading(180)
-    # head.forward(10)
-    
-    head.setheading(180)
-    # head.left(10)
-
 screen = Screen()
 screen.tracer(0) # animate is off
 screen.setup(width=600, height=600)
