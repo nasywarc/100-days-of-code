@@ -45,9 +45,12 @@ game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.5)
+    screen.listen()
+    screen.onkey(fun=move_forward, key=('w'))
+    screen.onkey(fun=move_backward, key=('s'))
+    screen.onkey(fun=move_right, key=('d'))
+    screen.onkey(fun=move_left, key=('a'))
     for segment in segment_list:
-        screen.listen()
-        screen.onkey(fun=move_left, key='a')
         segment.forward(40)
     
 
