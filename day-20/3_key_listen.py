@@ -17,11 +17,11 @@ def move_right():
     # head.forward(10)
     
 def move_left():
-    if head.heading() != 180:
-        head.setheading(180)
+    # if head.heading() != 180:
+    head.left(90)
     # head.forward(10)
     
-    head.setheading(180)
+    # head.setheading(180)
     # head.left(10)
 
 screen = Screen()
@@ -46,8 +46,9 @@ while game_is_on:
     screen.update()
     time.sleep(0.5)
     for segment in segment_list:
-        segment.forward(40)
         screen.listen()
+        screen.onkey(fun=move_left, key='a')
+        segment.forward(40)
     
 
 
