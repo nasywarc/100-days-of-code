@@ -13,12 +13,6 @@ def s_key():
 
 def d_key():
     pass
-    
-def move_right():
-    head.right(90)
-    
-def move_left():
-    head.left(90)
 
 screen = Screen()
 screen.tracer(0) # animate is off
@@ -44,8 +38,8 @@ while game_is_on:
     screen.listen()
     screen.onkey(fun=..., key=('w'))
     screen.onkey(fun=..., key=('s'))
-    screen.onkey(fun=move_right, key=('d'))
-    screen.onkey(fun=move_left, key=('a'))
+    screen.onkey(fun=..., key=('d'))
+    screen.onkey(fun=..., key=('a'))
     for segment in segment_list:
         segment.forward(40)
     
