@@ -1,5 +1,18 @@
 import time
 from turtle import Screen, Turtle
+
+def w_key():
+    # if head.setheading()
+    pass
+
+def a_key():
+    pass
+
+def s_key():
+    pass
+
+def d_key():
+    pass
     
 def move_right():
     head.right(90)
