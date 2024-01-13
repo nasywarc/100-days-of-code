@@ -2,8 +2,8 @@ import time
 from turtle import Screen, Turtle
 
 def w_key():
-    if head.heading() == 0:
-        pass
+    if head.heading() == 90 or head.heading(270):
+        head.setheading(180)
 
 def a_key():
     pass
@@ -36,10 +36,10 @@ while game_is_on:
     screen.update()
     time.sleep(0.5)
     screen.listen()
-    screen.onkey(fun=..., key=('w'))
-    screen.onkey(fun=..., key=('s'))
-    screen.onkey(fun=..., key=('d'))
-    screen.onkey(fun=..., key=('a'))
+    screen.onkey(fun=w_key, key=('w'))
+    screen.onkey(fun=a_key, key=('a'))
+    screen.onkey(fun=s_key, key=('s'))
+    screen.onkey(fun=d_key, key=('d'))
     for segment in segment_list:
         segment.forward(40)
     
