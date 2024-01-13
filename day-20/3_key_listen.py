@@ -37,7 +37,7 @@ head = segment_list[0]
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.5)
+    time.sleep(0.4)
     screen.listen()
     screen.onkey(fun=w_key, key=('w'))
     screen.onkey(fun=a_key, key=('a'))
