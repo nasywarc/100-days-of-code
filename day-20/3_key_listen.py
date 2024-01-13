@@ -2,17 +2,20 @@ import time
 from turtle import Screen, Turtle
 
 def w_key():
-    if head.heading() == 90 or head.heading(270):
-        head.setheading(180)
+    if head.heading() == 0 or head.heading() == 180:
+        head.setheading(90)
 
 def a_key():
-    pass
+    if head.heading() == 90 or head.heading() == 270:
+        head.setheading(180)
 
 def s_key():
-    pass
+    if head.heading() == 0 or head.heading() == 180:
+        head.setheading(270)
 
 def d_key():
-    pass
+    if head.heading() == 90 or head.heading() == 270:
+        head.setheading(0)
 
 screen = Screen()
 screen.tracer(0) # animate is off
