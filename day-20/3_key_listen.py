@@ -47,7 +47,7 @@ while game_is_on:
     for segment in segment_list:
         if segment != head:
             segment.goto(head.position())
-            head.forward(40)
+            head.forward(20)
     
 
 
