@@ -43,10 +43,11 @@ while game_is_on:
     screen.onkey(fun=a_key, key=('a'))
     screen.onkey(fun=s_key, key=('s'))
     screen.onkey(fun=d_key, key=('d'))
+    # head.forward(40)
     for segment in segment_list:
-        head.forward(40)
-        # if segment != head:
-        #     segment.goto()
+        if segment != head:
+            segment.goto(head.position())
+            head.forward(40)
     
 
 
