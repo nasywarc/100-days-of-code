@@ -1,4 +1,6 @@
 import time
+import random
+
 from turtle import Screen, Turtle
 
 def w_key():
@@ -43,13 +45,16 @@ while game_is_on:
     screen.onkey(fun=a_key, key=('a'))
     screen.onkey(fun=s_key, key=('s'))
     screen.onkey(fun=d_key, key=('d'))
-    # head.forward(40)
     for segment in segment_list:
         if segment != head:
             segment.goto(head.position())
             head.forward(20)
-    
-
+            
+    food = Turtle('square')
+    food.color('white')
+    random_x, random_y = random.randint(0, 600)
+    if random_x % 20 == 0 and random_y % 20 == 0:
+        food.goto(random_x, random_y)
 
 
 
