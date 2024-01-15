@@ -1,4 +1,5 @@
 import time
+import random
 
 from turtle import Screen, Turtle
 
@@ -48,7 +49,19 @@ while game_is_on:
         if segment != head:
             segment.goto(head.position())
             head.forward(20)
-        
+            
+    food = Turtle('square')
+    food.penup()
+    food.color('white')
+    found_food_pos = False
+    while not found_food_pos:
+        random_x = random.randint(0, 600)
+        random_y = random.randint(0, 600)
+        if random_x % 20 == 0 and random_y % 20 == 0:
+            found_food_pos = True
+            
+    food_pos = (random_x, random_y)
+    food.goto(food_pos)
 
 
 
