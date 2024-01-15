@@ -51,10 +51,17 @@ while game_is_on:
             head.forward(20)
             
     food = Turtle('square')
+    food.penup()
     food.color('white')
-    random_x, random_y = random.randint(0, 600)
-    if random_x % 20 == 0 and random_y % 20 == 0:
-        food.goto(random_x, random_y)
+    found_food_pos = False
+    while not found_food_pos:
+        random_x = random.randint(0, 600)
+        random_y = random.randint(0, 600)
+        if random_x % 20 == 0 and random_y % 20 == 0:
+            found_food_pos = True
+            
+    food_pos = (random_x, random_y)
+    food.goto(food_pos)
 
 
 
