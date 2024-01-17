@@ -45,7 +45,7 @@ found_food_pos = False
 while not found_food_pos:
     random_x = random.randint(0, 600)
     random_y = random.randint(0, 600)
-    if random_x % 20 == 0 and random_y % 20 == 0:
+    if random_x % 20 == 0 and random_x >= -300 and random_y >-300 and random_x <= 300 and random_y <=300 and random_y % 20 == 0:
         found_food_pos = True
 
 food_pos = (random_x, random_y)
@@ -71,7 +71,8 @@ while game_is_on:
     #         food.hideturtle()
     #         food_head = True
             
-    
+    # print(head.position())
+    # print(food_pos)
 
 
 
