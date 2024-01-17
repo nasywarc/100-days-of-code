@@ -36,6 +36,22 @@ for position in starting_pos:
     segment_list.append(new_segment)
 
 head = segment_list[0]
+
+food = Turtle('square')
+food.penup()
+food.color('white')
+
+found_food_pos = False
+while not found_food_pos:
+    random_x = random.randint(0, 600)
+    random_y = random.randint(0, 600)
+    if random_x % 20 == 0 and random_y % 20 == 0:
+        found_food_pos = True
+
+food_pos = (random_x, random_y)
+food.goto(food_pos)
+food_head = False
+        
 game_is_on = True
 while game_is_on:
     screen.update()
@@ -45,28 +61,15 @@ while game_is_on:
     screen.onkey(fun=a_key, key=('a'))
     screen.onkey(fun=s_key, key=('s'))
     screen.onkey(fun=d_key, key=('d'))
-    food = Turtle('square')
-    food.penup()
-    food.color('white')
-    found_food_pos = False
-    while not found_food_pos:
-        random_x = random.randint(0, 600)
-        random_y = random.randint(0, 600)
-        if random_x % 20 == 0 and random_y % 20 == 0:
-            found_food_pos = True
-            
-    food_pos = (random_x, random_y)
-    food.goto(food_pos)
-    food_head = False
             
     for segment in segment_list:
         if segment != head:
             segment.goto(head.position())
             head.forward(20)
-    while not food_head:
-        if food_pos == head.position():
-            food.hideturtle()
-            food_head = True
+    # while not food_head:
+    #     if food_pos == head.position():
+    #         food.hideturtle()
+    #         food_head = True
             
     
 
