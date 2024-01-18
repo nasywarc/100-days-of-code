@@ -48,7 +48,7 @@ while not found_food_pos:
     if random_x % 20 == 0 and random_x >= -300 and random_y >-300 and random_x <= 300 and random_y <=300 and random_y % 20 == 0:
         found_food_pos = True
 
-food_pos = (random_x, random_y)
+food_pos = (float(random_x), float(random_y))
 food.goto(food_pos)
 food_head = False
         
@@ -66,15 +66,11 @@ while game_is_on:
         if segment != head:
             segment.goto(head.position())
             head.forward(20)
-    # while not food_head:
-    #     if food_pos == head.position():
-    #         food.hideturtle()
-    #         food_head = True
             
-    # print(head.position())
-    # print(food_pos)
+    if head.position() == food_pos:
+        food.hideturtle()
 
-
+print(head.pos)
 
 
 
