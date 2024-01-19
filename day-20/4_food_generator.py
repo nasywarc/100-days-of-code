@@ -69,7 +69,7 @@ while game_is_on:
             
     if head.position() == food_pos:
         last_pos = segment_list[len(segment_list)-1]
-        food.goto(segment_list[len(segment_list)-1])
+        food.goto(last_pos)
         segment_list.append(food)
 
 print(head.pos)
