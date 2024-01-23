@@ -71,6 +71,16 @@ while game_is_on:
         last_pos = segment_list[len(segment_list)-1]
         food.goto(last_pos.pos())
         segment_list.append(food)
+        found_food_pos = False
+        while not found_food_pos:
+            random_x = random.randint(0, 600)
+            random_y = random.randint(0, 600)
+            if random_x % 20 == 0 and random_x >= -300 and random_y >-300 and random_x <= 300 and random_y <=300 and random_y % 20 == 0:
+                found_food_pos = True
+
+        food_pos = (float(random_x), float(random_y))
+        food.goto(food_pos)
+        food_head = False
 
 print(head.pos)
 
