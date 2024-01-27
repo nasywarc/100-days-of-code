@@ -40,7 +40,7 @@ food = Turtle('square')
 food.penup()
 food.color('white')
 
-def make_food(food_pos):
+def make_food():
     found_food_pos = False
     while not found_food_pos:
         random_x = random.randint(0, 600)
@@ -66,9 +66,8 @@ while game_is_on:
     for segment in segment_list:
         if segment != head:
             segment.goto(head.position())
-            head.forward(20)
-            
-    if head.position() == food_pos:
+            head.forward(20)        
+    if head.position() == make_food():
         last_pos = segment_list[len(segment_list)-1]
         food.goto(last_pos.pos())
         segment_list.append(food)
@@ -77,7 +76,7 @@ while game_is_on:
         # while not found_food_pos:
         #     random_x = random.randint(0, 600)
         #     random_y = random.randint(0, 600)
-        #     if random_x % 20 == 0 and random_x > -300 and random_y > -300 and random_x < 300 and random_y < 300 and random_y % 20 == 0:
+        #     if random_x % 20 == 0 and random_x > -300 and random_y > -300 and random_x < 300 and random_yd < 300 and random_y % 20 == 0:
         #         found_food_pos = True
 
         # food_pos = (float(random_x), float(random_y))
