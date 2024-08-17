@@ -71,7 +71,7 @@ password_label.grid(row=3, column=0)
 # Entry
 website_entry = Entry()
 website_entry.grid(row=1, column=1, columnspan=2, sticky="EW")
-website_entry.focus()  # auto focusing the cursor
+website_entry.focus()  # autofocusing the cursor
 email_usn_entry = Entry()
 email_usn_entry.grid(row=2, column=1, columnspan=2, sticky="EW")
 email_usn_entry.insert(0, 'dummy@gmail.com')
