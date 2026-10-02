@@ -1,0 +1,10 @@
+# hides env in the root folder and subfolder
+**/.env
+
+# hides all python junk folders
+**/__pycache__/
+
+# hides all pycharm configuration folders
+./idea/
+
+./vscode/
