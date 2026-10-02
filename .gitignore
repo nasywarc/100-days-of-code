@@ -5,6 +5,6 @@
 **/__pycache__/
 
 # hides all pycharm configuration folders
-./idea/
+**/idea/
 
-./vscode/
+**/vscode/
