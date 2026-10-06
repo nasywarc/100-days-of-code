@@ -1,5 +1,13 @@
 import requests
 from datetime import datetime
+from dotenv import load_dotenv
+import smtplib
+import os
+
+load_dotenv()
+
+my_email = os.getenv("MY_EMAIL")
+my_password = os.getenv("PythonMail")
 
 MY_LAT = -6.175110
 MY_LONG = 106.865036
@@ -20,8 +28,8 @@ def error_count(result, range):
     return result
 
 
-latidude_range = error_count(iss_latitude, 5)
-longitude_range = error_count(iss_longitude, 5)
+iss_pos_lat_range = error_count(iss_latitude, 5)
+iss_pos_long_range = error_count(iss_longitude, 5)
 
 print(iss_latitude, iss_longitude)
 print(MY_LAT, MY_LONG)
@@ -41,12 +49,36 @@ sunset = int(data['sunset'].split("T")[1].split(":")[0])
 
 time_now = datetime.now().hour
 
-if latidude_range[1] < MY_LAT < latidude_range[0] and longitude_range[1] < MY_LONG < longitude_range[0]:
+if iss_pos_lat_range[1] < MY_LAT < iss_pos_lat_range[0] and iss_pos_long_range[1] < MY_LONG < iss_pos_long_range[0]:
     if sunset < time_now <= 23 or 0 <= time_now < sunrise:
+        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+            connection.starttls()
+            connection.login(my_email, my_password)
+            connection.sendmail(
+                from_addr=my_email,
+                to_addrs=os.getenv("TARGETED_EMAIL_2"),
+                msg="Subject:ISS Position Update\n\nThe ISS is over your place."
+            )
         print('above you')
     else:
+        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+            connection.starttls()
+            connection.login(my_email, my_password)
+            connection.sendmail(
+                from_addr=my_email,
+                to_addrs=os.getenv("TARGETED_EMAIL_2"),
+                msg="Subject:ISS Position Update\n\nThe ISS is over your place, but its noon."
+            )
         print('above you, but the sun is still up')
 else:
+    with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+        connection.starttls()
+        connection.login(my_email, my_password)
+        connection.sendmail(
+            from_addr=my_email,
+            to_addrs=os.getenv("TARGETED_EMAIL_2"),
+            msg="Subject:ISS Position Update\n\nThe ISS is not over your place."
+        )
     print('away from you')
 
 # If the ISS is close to my current position
