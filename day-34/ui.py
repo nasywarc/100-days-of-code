@@ -20,25 +20,42 @@ class QuizInterface:
             150,
             125,
             width=280,
-            text='Amazon acquired Twitch zzzzzzzzzzz zzzzzzzzzzzzzz',
+            text='Amazon acquired Twitch',
             fill=THEME_COLOR,
             font=("arial", 20, 'italic')
         )
-        self.canvas.grid(padx=20, pady=20, row=1, columnspan=2, sticky="esew")
+        self.canvas.grid(
+            padx=20,
+            pady=20,
+            row=1,
+            columnspan=2,
+            sticky="esew")
 
-        self.score_text = Label(text='Score: 0',  bg=THEME_COLOR, fg="white", font=(
-            "Arial", 10, 'bold'))
+        self.score_text = Label(
+            text='Score: 0',
+            bg=THEME_COLOR,
+            fg="white",
+            font=(
+                "Arial",
+                10,
+                'bold'))
 
         self.score_text.grid(padx=20, pady=20, row=0, column=1)
 
         self.true_image = PhotoImage(file="images/true.png")
         self.false_image = PhotoImage(file="images/false.png")
 
-        self.true_button = Button(image=self.true_image)
+        self.true_button = Button(
+            image=self.true_image,
+            command=self.true_pressed
+        )
         self.true_button.grid(padx=20, pady=20, row=2, column=0)
 
-        self.wrong_button = Button(image=self.false_image)
-        self.wrong_button.grid(padx=20, pady=20, row=2, column=1)
+        self.false_button = Button(
+            image=self.false_image,
+            command=self.false_pressed
+        )
+        self.false_button.grid(padx=20, pady=20, row=2, column=1)
 
         self.get_next_question()
 
@@ -47,3 +64,34 @@ class QuizInterface:
     def get_next_question(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
+
+    def update_score(self):
+        new_score = self.quiz.score
+        self.score_text.config(text=f"Score: {new_score}")
+
+    def check_remain_question(self):
+        if self.quiz.still_has_questions():
+            self.get_next_question()
+        else:
+            end_text = f"You've completed the quiz!\n\nYour final score was: {self.quiz.score}/{self.quiz.question_number}"
+            self.canvas.itemconfig(self.question_text, text=end_text)
+            self.true_button.config(state=DISABLED)
+            self.false_button.config(state=DISABLED)
+
+    def true_pressed(self):
+        answer = "true"
+        self.quiz.check_answer(answer)
+        self.update_score()
+        if self.quiz.still_has_questions():
+            self.get_next_question()
+        else:
+            self.check_remain_question()
+
+    def false_pressed(self):
+        answer = "false"
+        self.quiz.check_answer(answer)
+        self.update_score()
+        if self.quiz.still_has_questions():
+            self.get_next_question()
+        else:
+            self.check_remain_question()
