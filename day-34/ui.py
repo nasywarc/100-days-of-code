@@ -14,8 +14,11 @@ class QuizInterface:
         self.window.title("Quizzler")
 
         self.window.config(bg=THEME_COLOR)
-        self.canvas = Canvas(width=300, height=250,
-                             bg="White", highlightthickness=0)
+        self.canvas = Canvas(
+            width=300,
+            height=250,
+            bg="White",
+            highlightthickness=0)
         self.question_text = self.canvas.create_text(
             150,
             125,
@@ -79,19 +82,35 @@ class QuizInterface:
             self.false_button.config(state=DISABLED)
 
     def true_pressed(self):
-        answer = "true"
-        self.quiz.check_answer(answer)
-        self.update_score()
-        if self.quiz.still_has_questions():
-            self.get_next_question()
-        else:
-            self.check_remain_question()
+        is_right = self.quiz.check_answer("True")
+        self.give_feedback(is_right)
 
     def false_pressed(self):
-        answer = "false"
-        self.quiz.check_answer(answer)
-        self.update_score()
-        if self.quiz.still_has_questions():
-            self.get_next_question()
+        is_right = self.quiz.check_answer("False")
+        self.give_feedback(is_right)
+
+    def give_feedback(self, is_right):
+        self.window.after(0, self.color_change_green)
+        self.window.after(500, self.color_change_white)
+        if is_right:
+            self.update_score()
+            if self.quiz.still_has_questions():
+                self.get_next_question()
+            else:
+                self.check_remain_question()
         else:
-            self.check_remain_question()
+            self.window.after(0, self.color_change_red)
+            self.window.after(500, self.color_change_white)
+            if self.quiz.still_has_questions():
+                self.get_next_question()
+            else:
+                self.check_remain_question()
+
+    def color_change_green(self):
+        self.canvas.config(bg="Green")
+
+    def color_change_white(self):
+        self.canvas.config(bg="White")
+
+    def color_change_red(self):
+        self.canvas.config(bg="Red")
