@@ -6,5 +6,5 @@
 
 # hides all pycharm configuration folders
 **.idea/
-
+**__MACOSX/
 **.vscode/
