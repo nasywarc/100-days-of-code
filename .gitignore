@@ -1,5 +1,6 @@
 # hides env in the root folder and subfolder
 **/.env
+**/browser.json
 
 # hides all python junk folders
 **/__pycache__/
