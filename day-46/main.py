@@ -36,11 +36,13 @@ if duplicate == False:
         privacy_status='PRIVATE',
         description=f'New Playlist for BB 100 {date}',
         )
-
-for song in range (len(song_list)):
-    search_results = yt.search(song_list[song])
-    yt.add_playlist_items(
-        playlistId=new_playlist,
-        videoIds=[search_results[0]['videoId']],
-    )
-    print(f'The song of {song_list[song]} has been added to the playlist as the {song+1}th')
+    for song in range (len(song_list)):
+        search_results = yt.search(song_list[song])
+        yt.add_playlist_items(
+            playlistId=new_playlist,
+            videoIds=[search_results[0]['videoId']],
+        )
+        print(f'The song of {song_list[song]} has been added to the playlist as the {song+1}th')
+    
+else:
+    print('Already have that playlist name.')
