@@ -8,8 +8,8 @@ driver = webdriver.Chrome(options=chrome_options)
 driver.get(url='https://en.wikipedia.org/wiki/Main_Page')
 
 articles_total = driver.find_element(
-    By.XPATH,
-    '//*[@id="mwDw"]'
+    By.CSS_SELECTOR,
+    '#articlecount ul li+li a span'
 )
 
 print(articles_total.text)
