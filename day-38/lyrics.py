@@ -3,7 +3,7 @@ import requests
 artist_name = input("Type artist name: ")
 title_name = input("Type title name: ")
 
-end_point = f"https://api.lyrics.ovh/v1/{artist_name}/{title_name}"
+end_point = (f"https://api.lyrics.ovh/v1/{artist_name}/{title_name}")
 
 headers = {
     "Content-Type": "application/json"
@@ -11,7 +11,7 @@ headers = {
 
 response = requests.get(
     url=end_point,
-    headers=headers
+    headers=headers,
 )
 
 song_lyrics = response.json()
