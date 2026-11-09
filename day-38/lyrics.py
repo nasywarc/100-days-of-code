@@ -1,18 +1,32 @@
 import requests
+import os
 
-artist_name = input("Type artist name: ")
-title_name = input("Type title name: ")
+endless = True
 
-end_point = (f"https://api.lyrics.ovh/v1/{artist_name}/{title_name}")
+while endless:
+    os.system('cls')
+    artist_name = input("Type artist name: ")
+    title_name = input("Type title name: ")
 
-headers = {
-    "Content-Type": "application/json"
-}
+    end_point = (f"https://api.lyrics.ovh/v1/{artist_name}/{title_name}")
 
-response = requests.get(
-    url=end_point,
-    headers=headers,
-)
+    headers = {
+        "Content-Type": "application/json"
+    }
 
-song_lyrics = response.json()
-print(song_lyrics['lyrics'])
+    response = requests.get(
+        url=end_point,
+        headers=headers,
+    )
+
+    song_lyrics = response.json()
+    print(f"\n{title_name.title()} by {artist_name.title()}")
+    print("--------------------------------------------")
+    print(song_lyrics['lyrics'])
+
+    continue_program = input("\n\nContinue? (Y/N): ").lower()
+
+    if continue_program == "n":
+        endless = False
+
+print("Program stopped.")
