@@ -29,4 +29,4 @@ while endless:
     if continue_program == "n":
         endless = False
 
-print("Program stopped.")
+print("Program has been stopped.")
