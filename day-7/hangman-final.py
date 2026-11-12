@@ -1,9 +1,9 @@
-import random  # untuk menggunakan random func
-import hangman_art  # untuk mengambil var logo dan var stages
-import hangman_words  # untuk mengambil var word_list
-import os  # untuk mengakses file kita, dalam ini clear screen
+import random
+import hangman_art  # importing logo and stages var
+import hangman_words  # importing word_list var
+import os  # in this code, for cls func
 
-# menghapus semua tulisan agar layar bersih saat program dijalankan
+# clear the terminal
 os.system('cls')
 
 print(hangman_art.logo)
@@ -12,7 +12,7 @@ theme = ['Animal', 'Fruit', 'Snack']
 print(f"Theme : {theme[user_choice-1]}")
 
 chosen_word = list(random.choice(
-    hangman_words.my_word_list[user_choice-1][0]))  # memilih tema game
+    hangman_words.my_word_list[user_choice-1][0]))  # picking the game theme
 display = []
 for letter in chosen_word:
     display.append("_")
@@ -41,7 +41,8 @@ while display != chosen_word and life > 0:
             if guess == chosen_word[position]:
                 display[position] = (guess)
                 guess_list.append(guess)
-
+    elif guess == ''.join(chosen_word):
+        display = chosen_word
     else:
         life -= 1
         guess_list.append(guess)
