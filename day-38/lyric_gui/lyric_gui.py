@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import scrolledtext
+from art import logo
 import requests
 
 THEME_COLOR = "#252321"
@@ -61,32 +62,48 @@ def clear_fields():
 window = Tk()
 window.title("Lyrify")
 window.config(bg=THEME_COLOR, padx=25, pady=25)
-window.minsize(width=500, height=550)
+
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+
+x = (screen_width - 650) // 2
+y = (screen_height - 950) // 2
+
+window.geometry(f"650x900+{x}+{y}")
 
 # title header
 title_label = Label(
-    text="Lyrify",
-    font=("Helvetica", 20, "bold"),
+    text=logo,
+    font=("Courier New", 15, "bold"),
+    justify="left",
     bg=THEME_COLOR,
     fg=TEXT_COLOR
 )
 title_label.grid(row=0, column=0, columnspan=2, pady=(0, 15))
 
 # artist input
-artist_label = Label(text="Artist Name:", font=(
-    "Helvetica", 11), bg=THEME_COLOR, fg=TEXT_COLOR)
+artist_label = Label(
+    text="Artist Name:",
+    font=("Courier New", 15),
+    bg=THEME_COLOR,
+    fg=TEXT_COLOR
+)
 artist_label.grid(row=1, column=0, sticky="w", pady=5)
 
-artist_entry = Entry(width=35, font=("Helvetica", 11))
+artist_entry = Entry(width=35, font=("Courier New", 15))
 artist_entry.grid(row=1, column=1, sticky="ew", pady=5, padx=(10, 0))
 artist_entry.focus()
 
 # song title input
-title_label = Label(text="Song Title:", font=(
-    "Helvetica", 11), bg=THEME_COLOR, fg=TEXT_COLOR)
+title_label = Label(
+    text="Song Title:",
+    font=("Courier New", 15),
+    bg=THEME_COLOR,
+    fg=TEXT_COLOR
+)
 title_label.grid(row=2, column=0, sticky="w", pady=5)
 
-title_entry = Entry(width=35, font=("Helvetica", 11))
+title_entry = Entry(width=35, font=("Courier New", 15))
 title_entry.grid(row=2, column=1, sticky="ew", pady=5, padx=(10, 0))
 
 # buttons frame
@@ -96,7 +113,7 @@ button_frame.grid(row=3, column=0, columnspan=2, pady=15)
 search_button = Button(
     button_frame,
     text="Get Lyrics",
-    font=("Helvetica", 11, "bold"),
+    font=("Courier New", 15, "bold"),
     bg=ACCENT_COLOR,
     fg=TEXT_COLOR,
     width=14,
@@ -107,10 +124,10 @@ search_button.pack(side=LEFT, padx=5)
 clear_button = Button(
     button_frame,
     text="Clear / New Search",
-    font=("Helvetica", 11),
-    bg="#353535",
+    font=("Courier New", 15, "bold"),
+    bg=ACCENT_COLOR,
     fg=TEXT_COLOR,
-    width=16,
+    width=20,
     command=clear_fields
 )
 clear_button.pack(side=LEFT, padx=5)
@@ -121,8 +138,8 @@ lyrics_display = scrolledtext.ScrolledText(
     wrap=WORD,
     width=50,
     height=20,
-    font=("Helvetica", 10),
-    bg="#414040",
+    font=("Courier New", 14),
+    bg=ACCENT_COLOR,
     fg=TEXT_COLOR,
     padx=10,
     pady=10,
