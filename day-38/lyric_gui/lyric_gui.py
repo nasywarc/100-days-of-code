@@ -9,7 +9,7 @@ TEXT_COLOR = "#D4D4D4"
 
 current_font_size = 14
 MIN_FONT_SIZE = 8
-MAX_FONT_SIZE = 32
+MAX_FONT_SIZE = 40
 
 
 def zoom_in():
