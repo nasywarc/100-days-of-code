@@ -7,6 +7,24 @@ THEME_COLOR = "#252321"
 ACCENT_COLOR = "#353433"
 TEXT_COLOR = "#D4D4D4"
 
+current_font_size = 14
+MIN_FONT_SIZE = 8
+MAX_FONT_SIZE = 32
+
+
+def zoom_in():
+    global current_font_size
+    if current_font_size < MAX_FONT_SIZE:
+        current_font_size += 2
+        lyrics_display.config(font=("Courier New", current_font_size))
+
+
+def zoom_out():
+    global current_font_size
+    if current_font_size > MIN_FONT_SIZE:
+        current_font_size -= 2
+        lyrics_display.config(font=("Courier New", current_font_size))
+
 
 def fetch_lyrics():
     artist_name = artist_entry.get().strip()
@@ -113,10 +131,10 @@ button_frame.grid(row=3, column=0, columnspan=2, pady=15)
 search_button = Button(
     button_frame,
     text="Get Lyrics",
-    font=("Courier New", 15, "bold"),
+    font=("Courier New", 14, "bold"),
     bg=ACCENT_COLOR,
     fg=TEXT_COLOR,
-    width=14,
+    width=12,
     command=fetch_lyrics
 )
 search_button.pack(side=LEFT, padx=5)
@@ -124,13 +142,35 @@ search_button.pack(side=LEFT, padx=5)
 clear_button = Button(
     button_frame,
     text="Clear / New Search",
-    font=("Courier New", 15, "bold"),
+    font=("Courier New", 14, "bold"),
     bg=ACCENT_COLOR,
     fg=TEXT_COLOR,
-    width=20,
+    width=18,
     command=clear_fields
 )
 clear_button.pack(side=LEFT, padx=5)
+
+zoom_out_button = Button(
+    button_frame,
+    text="-",
+    font=("Courier New", 14, "bold"),
+    bg=ACCENT_COLOR,
+    fg=TEXT_COLOR,
+    width=3,
+    command=zoom_out
+)
+zoom_out_button.pack(side=LEFT, padx=5)
+
+zoom_in_button = Button(
+    button_frame,
+    text="+",
+    font=("Courier New", 14, "bold"),
+    bg=ACCENT_COLOR,
+    fg=TEXT_COLOR,
+    width=3,
+    command=zoom_in
+)
+zoom_in_button.pack(side=LEFT, padx=5)
 
 # scrollable lyrics display text
 lyrics_display = scrolledtext.ScrolledText(
@@ -138,7 +178,7 @@ lyrics_display = scrolledtext.ScrolledText(
     wrap=WORD,
     width=50,
     height=20,
-    font=("Courier New", 14),
+    font=("Courier New", current_font_size),
     bg=ACCENT_COLOR,
     fg=TEXT_COLOR,
     padx=10,
@@ -151,7 +191,11 @@ lyrics_display.grid(row=4, column=0, columnspan=2, sticky="nsew")
 window.grid_columnconfigure(1, weight=1)
 window.grid_rowconfigure(4, weight=1)
 
-# bind the 'Enter' key so pressing Return triggers the search
+# keyboard shortcuts
 window.bind("<Return>", lambda event: fetch_lyrics())
+window.bind("<Control-plus>", lambda event: zoom_in())
+# handles '+' without holding Shift
+window.bind("<Control-equal>", lambda event: zoom_in())
+window.bind("<Control-minus>", lambda event: zoom_out())
 
 window.mainloop()
