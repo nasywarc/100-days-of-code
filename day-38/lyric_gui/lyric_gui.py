@@ -7,7 +7,7 @@ THEME_COLOR = "#252321"
 ACCENT_COLOR = "#353433"
 TEXT_COLOR = "#D4D4D4"
 
-current_font_size = 14
+current_font_size = 16
 MIN_FONT_SIZE = 8
 MAX_FONT_SIZE = 40
 
@@ -52,7 +52,7 @@ def fetch_lyrics():
 
         if "lyrics" in song_lyrics:
             header = f"{title_name.title()} by {artist_name.title()}\n"
-            divider = "--------------------------------------------\n"
+            divider = "---------------------------------------\n"
             lyrics_display.insert(
                 END, header + divider + song_lyrics["lyrics"])
         else:
