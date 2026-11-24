@@ -1,1 +1,151 @@
-@import "tailwindcss";
+:root {
+  --theme-color: #252321;
+  --accent-color: #353433;
+  --accent-hover: #454341;
+  --text-color: #d4d4d4;
+  --input-color: #f5f5f5;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--text-color);
+  background: var(--theme-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 25px;
+  background: var(--theme-color);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 650px);
+  min-height: calc(100vh - 50px);
+  margin: 0 auto;
+}
+
+.logo {
+  align-self: center;
+  max-width: 100%;
+  margin: 0 0 15px;
+  overflow-x: auto;
+  color: var(--text-color);
+  font-size: clamp(8px, 2.25vw, 15px);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.search-form label {
+  white-space: nowrap;
+}
+
+.search-form input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  color: #222;
+  background: var(--input-color);
+}
+
+.search-form input:focus-visible,
+button:focus-visible,
+.lyrics-display:focus-visible {
+  outline: 2px solid #9c9a97;
+  outline-offset: 2px;
+}
+
+.controls {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+button {
+  padding: 9px 14px;
+  border: 1px solid #545250;
+  border-radius: 3px;
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: bold;
+  background: var(--accent-color);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.zoom-button {
+  width: 42px;
+  padding-inline: 0;
+  font-size: 18px;
+}
+
+.lyrics-display {
+  flex: 1;
+  min-height: 420px;
+  margin-top: 10px;
+  padding: 14px;
+  overflow: auto;
+  border: 1px solid #444240;
+  border-radius: 3px;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--accent-color);
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 16px;
+  }
+
+  .app {
+    min-height: calc(100vh - 32px);
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    grid-column: 1;
+    flex-wrap: wrap;
+  }
+
+  .lyrics-display {
+    min-height: 55vh;
+  }
+}
