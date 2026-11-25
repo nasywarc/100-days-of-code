@@ -3,9 +3,21 @@ from tkinter import scrolledtext
 from art import logo
 import requests
 
-THEME_COLOR = "#252321"
-ACCENT_COLOR = "#353433"
-TEXT_COLOR = "#D4D4D4"
+DARK_THEME = {
+    "background": "#252321",
+    "surface": "#353433",
+    "text": "#D4D4D4",
+    "input": "#454341",
+}
+
+LIGHT_THEME = {
+    "background": "#F4F1EA",
+    "surface": "#DED8CC",
+    "text": "#252321",
+    "input": "#FFFFFF",
+}
+
+current_theme = "dark"
 
 current_font_size = 16
 MIN_FONT_SIZE = 8
@@ -76,10 +88,59 @@ def clear_fields():
     artist_entry.focus()
 
 
+def apply_theme():
+    """Apply the currently selected colour palette to the whole interface."""
+    theme = DARK_THEME if current_theme == "dark" else LIGHT_THEME
+
+    window.config(bg=theme["background"])
+    logo_label.config(bg=theme["background"], fg=theme["text"])
+
+    for label in (artist_label, song_title_label):
+        label.config(bg=theme["background"], fg=theme["text"])
+
+    for entry in (artist_entry, title_entry):
+        entry.config(
+            bg=theme["input"],
+            fg=theme["text"],
+            insertbackground=theme["text"],
+        )
+
+    button_frame.config(bg=theme["background"])
+    theme_frame.config(bg=theme["background"])
+    for button in (
+        search_button,
+        clear_button,
+        zoom_out_button,
+        zoom_in_button,
+        theme_toggle_button,
+    ):
+        button.config(
+            bg=theme["surface"],
+            fg=theme["text"],
+            activebackground=theme["input"],
+            activeforeground=theme["text"],
+        )
+
+    lyrics_display.config(
+        bg=theme["surface"],
+        fg=theme["text"],
+        insertbackground=theme["text"],
+    )
+
+    next_mode = "Light Mode" if current_theme == "dark" else "Dark Mode"
+    theme_toggle_button.config(text=f"Switch to {next_mode}")
+
+
+def toggle_theme():
+    global current_theme
+    current_theme = "light" if current_theme == "dark" else "dark"
+    apply_theme()
+
+
 # ui setup
 window = Tk()
 window.title("Lyrify")
-window.config(bg=THEME_COLOR, padx=25, pady=25)
+window.config(bg=DARK_THEME["background"], padx=25, pady=25)
 
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
@@ -90,21 +151,21 @@ y = (screen_height - 950) // 2
 window.geometry(f"650x900+{x}+{y}")
 
 # title header
-title_label = Label(
+logo_label = Label(
     text=logo,
     font=("Courier New", 15, "bold"),
     justify="left",
-    bg=THEME_COLOR,
-    fg=TEXT_COLOR
+    bg=DARK_THEME["background"],
+    fg=DARK_THEME["text"]
 )
-title_label.grid(row=0, column=0, columnspan=2, pady=(0, 15))
+logo_label.grid(row=0, column=0, columnspan=2, pady=(0, 15))
 
 # artist input
 artist_label = Label(
     text="Artist Name:",
     font=("Courier New", 15),
-    bg=THEME_COLOR,
-    fg=TEXT_COLOR
+    bg=DARK_THEME["background"],
+    fg=DARK_THEME["text"]
 )
 artist_label.grid(row=1, column=0, sticky="w", pady=5)
 
@@ -113,27 +174,27 @@ artist_entry.grid(row=1, column=1, sticky="ew", pady=5, padx=(10, 0))
 artist_entry.focus()
 
 # song title input
-title_label = Label(
+song_title_label = Label(
     text="Song Title:",
     font=("Courier New", 15),
-    bg=THEME_COLOR,
-    fg=TEXT_COLOR
+    bg=DARK_THEME["background"],
+    fg=DARK_THEME["text"]
 )
-title_label.grid(row=2, column=0, sticky="w", pady=5)
+song_title_label.grid(row=2, column=0, sticky="w", pady=5)
 
 title_entry = Entry(width=35, font=("Courier New", 15))
 title_entry.grid(row=2, column=1, sticky="ew", pady=5, padx=(10, 0))
 
 # buttons frame
-button_frame = Frame(bg=THEME_COLOR)
+button_frame = Frame(bg=DARK_THEME["background"])
 button_frame.grid(row=3, column=0, columnspan=2, pady=15)
 
 search_button = Button(
     button_frame,
     text="Get Lyrics",
     font=("Courier New", 14, "bold"),
-    bg=ACCENT_COLOR,
-    fg=TEXT_COLOR,
+    bg=DARK_THEME["surface"],
+    fg=DARK_THEME["text"],
     width=12,
     command=fetch_lyrics
 )
@@ -143,8 +204,8 @@ clear_button = Button(
     button_frame,
     text="Clear / New Search",
     font=("Courier New", 14, "bold"),
-    bg=ACCENT_COLOR,
-    fg=TEXT_COLOR,
+    bg=DARK_THEME["surface"],
+    fg=DARK_THEME["text"],
     width=18,
     command=clear_fields
 )
@@ -154,8 +215,8 @@ zoom_out_button = Button(
     button_frame,
     text="-",
     font=("Courier New", 14, "bold"),
-    bg=ACCENT_COLOR,
-    fg=TEXT_COLOR,
+    bg=DARK_THEME["surface"],
+    fg=DARK_THEME["text"],
     width=3,
     command=zoom_out
 )
@@ -165,8 +226,8 @@ zoom_in_button = Button(
     button_frame,
     text="+",
     font=("Courier New", 14, "bold"),
-    bg=ACCENT_COLOR,
-    fg=TEXT_COLOR,
+    bg=DARK_THEME["surface"],
+    fg=DARK_THEME["text"],
     width=3,
     command=zoom_in
 )
@@ -179,13 +240,30 @@ lyrics_display = scrolledtext.ScrolledText(
     width=50,
     height=20,
     font=("Courier New", current_font_size),
-    bg=ACCENT_COLOR,
-    fg=TEXT_COLOR,
+    bg=DARK_THEME["surface"],
+    fg=DARK_THEME["text"],
     padx=10,
     pady=10,
     state=DISABLED
 )
 lyrics_display.grid(row=4, column=0, columnspan=2, sticky="nsew")
+
+# dark/light theme toggle
+theme_frame = Frame(bg=DARK_THEME["background"])
+theme_frame.grid(row=5, column=0, columnspan=2, pady=(12, 0))
+
+theme_toggle_button = Button(
+    theme_frame,
+    text="Switch to Light Mode",
+    font=("Courier New", 12, "bold"),
+    bg=DARK_THEME["surface"],
+    fg=DARK_THEME["text"],
+    width=22,
+    command=toggle_theme,
+)
+theme_toggle_button.pack()
+
+apply_theme()
 
 # allow window resizing to expand the lyrics box smoothly
 window.grid_columnconfigure(1, weight=1)
