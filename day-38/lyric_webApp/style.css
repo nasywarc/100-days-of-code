@@ -4,9 +4,25 @@
   --accent-hover: #454341;
   --text-color: #d4d4d4;
   --input-color: #f5f5f5;
+  --input-text-color: #222;
+  --border-color: #545250;
+  --display-border-color: #444240;
+  --focus-color: #9c9a97;
   font-family: "Courier New", Courier, monospace;
   color: var(--text-color);
   background: var(--theme-color);
+}
+
+:root[data-theme="light"] {
+  --theme-color: #f4f1ea;
+  --accent-color: #ded8cc;
+  --accent-hover: #cec6b8;
+  --text-color: #252321;
+  --input-color: #fff;
+  --input-text-color: #252321;
+  --border-color: #aaa294;
+  --display-border-color: #b8b0a3;
+  --focus-color: #6b655d;
 }
 
 * {
@@ -29,9 +45,16 @@ input {
 .app {
   display: flex;
   flex-direction: column;
-  width: min(100%, 650px);
+  /* Desktop ratio: 2/7 empty + 3/7 app + 2/7 empty. */
+  width: max(650px, 42.857vw);
+  max-width: 100%;
   min-height: calc(100vh - 50px);
   margin: 0 auto;
+}
+
+.theme-toggle {
+  align-self: flex-end;
+  margin-bottom: 12px;
 }
 
 .logo {
@@ -50,7 +73,7 @@ input {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 10px;
   align-items: center;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .search-form label {
@@ -62,14 +85,14 @@ input {
   padding: 8px 10px;
   border: 2px solid transparent;
   border-radius: 2px;
-  color: #222;
+  color: var(--input-text-color);
   background: var(--input-color);
 }
 
 .search-form input:focus-visible,
 button:focus-visible,
 .lyrics-display:focus-visible {
-  outline: 2px solid #9c9a97;
+  outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
@@ -83,7 +106,7 @@ button:focus-visible,
 
 button {
   padding: 9px 14px;
-  border: 1px solid #545250;
+  border: 1px solid var(--border-color);
   border-radius: 3px;
   color: var(--text-color);
   font-size: 14px;
@@ -113,11 +136,12 @@ button:disabled {
 
 .lyrics-display {
   flex: 1;
+  width: 100%;
   min-height: 420px;
   margin-top: 10px;
   padding: 14px;
   overflow: auto;
-  border: 1px solid #444240;
+  border: 1px solid var(--display-border-color);
   border-radius: 3px;
   color: var(--text-color);
   font-size: 16px;
@@ -133,6 +157,7 @@ button:disabled {
   }
 
   .app {
+    width: 100%;
     min-height: calc(100vh - 32px);
   }
 
