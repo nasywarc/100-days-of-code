@@ -10,14 +10,21 @@
   </head>
   <body>
     <main class="app">
-      <button
-        id="theme-toggle"
-        class="theme-toggle"
-        type="button"
-        aria-pressed="false"
-      >
-        Switch to Light Mode
-      </button>
+      <fieldset class="theme-picker" aria-label="Choose a color theme">
+        <legend>Theme</legend>
+        <label>
+          <input type="radio" name="theme" value="dark" checked />
+          <span>Dark</span>
+        </label>
+        <label>
+          <input type="radio" name="theme" value="light" />
+          <span>Light</span>
+        </label>
+        <label>
+          <input type="radio" name="theme" value="earthy" />
+          <span>Earthy</span>
+        </label>
+      </fieldset>
 
       <pre class="logo" aria-label="Lyrify">
  _                  _    __

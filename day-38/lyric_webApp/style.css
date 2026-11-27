@@ -25,6 +25,18 @@
   --focus-color: #6b655d;
 }
 
+:root[data-theme="earthy"] {
+  --theme-color: #e7e4d5;
+  --accent-color: #c8d0b8;
+  --accent-hover: #b8c3a6;
+  --text-color: #3f4938;
+  --input-color: #f7f3e8;
+  --input-text-color: #3e4437;
+  --border-color: #8c806a;
+  --display-border-color: #9b917a;
+  --focus-color: #5d704f;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -52,9 +64,60 @@ input {
   margin: 0 auto;
 }
 
-.theme-toggle {
+.theme-picker {
   align-self: flex-end;
+  display: flex;
+  gap: 3px;
   margin-bottom: 12px;
+  padding: 3px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--accent-color);
+}
+
+.theme-picker legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.theme-picker label {
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-picker input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.theme-picker span {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 3px;
+  color: var(--text-color);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.theme-picker label:hover span {
+  background: var(--accent-hover);
+}
+
+.theme-picker input:checked + span {
+  color: var(--input-text-color);
+  background: var(--input-color);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 18%);
+}
+
+.theme-picker input:focus-visible + span {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .logo {

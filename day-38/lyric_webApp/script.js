@@ -6,7 +6,7 @@ const clearButton = document.querySelector("#clear-button");
 const zoomOutButton = document.querySelector("#zoom-out");
 const zoomInButton = document.querySelector("#zoom-in");
 const lyricsDisplay = document.querySelector("#lyrics-display");
-const themeToggleButton = document.querySelector("#theme-toggle");
+const themeOptions = document.querySelectorAll('input[name="theme"]');
 
 const MIN_FONT_SIZE = 8;
 const MAX_FONT_SIZE = 40;
@@ -14,19 +14,12 @@ const FONT_STEP = 2;
 let currentFontSize = 16;
 
 function applyTheme(theme) {
-  const isLightMode = theme === "light";
-
   document.documentElement.dataset.theme = theme;
-  themeToggleButton.textContent = isLightMode
-    ? "Switch to Dark Mode"
-    : "Switch to Light Mode";
-  themeToggleButton.setAttribute("aria-pressed", String(isLightMode));
+  const selectedOption = document.querySelector(
+    `input[name="theme"][value="${theme}"]`,
+  );
+  if (selectedOption) selectedOption.checked = true;
   localStorage.setItem("lyrify-theme", theme);
-}
-
-function toggleTheme() {
-  const currentTheme = document.documentElement.dataset.theme || "dark";
-  applyTheme(currentTheme === "dark" ? "light" : "dark");
 }
 
 function setFontSize(size) {
@@ -107,7 +100,9 @@ zoomOutButton.addEventListener("click", () =>
 zoomInButton.addEventListener("click", () =>
   setFontSize(currentFontSize + FONT_STEP),
 );
-themeToggleButton.addEventListener("click", toggleTheme);
+themeOptions.forEach((option) => {
+  option.addEventListener("change", () => applyTheme(option.value));
+});
 
 document.addEventListener("keydown", (event) => {
   if (!event.ctrlKey && !event.metaKey) return;
@@ -121,5 +116,9 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-applyTheme(localStorage.getItem("lyrify-theme") === "light" ? "light" : "dark");
+const savedTheme = localStorage.getItem("lyrify-theme");
+const initialTheme = ["dark", "light", "earthy"].includes(savedTheme)
+  ? savedTheme
+  : "dark";
+applyTheme(initialTheme);
 setFontSize(currentFontSize);
